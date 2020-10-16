@@ -10,11 +10,15 @@
 
 ## 기술 스택
 
-### Back-end
+###Deep Learning
+ - Tensorflow 2.0
+ - python 3.7
+
+### Web Back-end
  - 
  - 
  
-### Front-end
+### Web Front-end
  - 
  - 
  
