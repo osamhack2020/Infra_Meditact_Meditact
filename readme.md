@@ -16,7 +16,7 @@
 ###Deep Learning
  - Tensorflow 2.0
  - Keras 2.3
- - python 3.6
+ - Python 3.6
 
 ### Web Back-end
  - 
