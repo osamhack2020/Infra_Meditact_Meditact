@@ -4,6 +4,10 @@
 
 ---
 
+## 프로젝트 소개
+
+---
+
 ## 기술 스택
 
 ### Back-end
@@ -32,7 +36,7 @@
 
 ## 팀 정보
 
-김성일 (shiroed1211gmail.com), Github Id: kshired
+김성일 (shiroed1211@gmail.com), Github Id: kshired
 
 강재현 (youkind98@gmail.com), Github Id: AshHyun
 
