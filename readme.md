@@ -46,16 +46,6 @@
 
 - [여종현](https://github.com/mindgitrwx) 상병, E-mail :  jonghyeon.rw@gmail.com
 
-
-
-
-
-- 이현훈 (jackli0373@gmail.com), Github Id: HyeonhoonLee
-
-- 김찬호 (hpyho33@naver.com), Github Id: ChanHHOO
-
-- 여종현 (jonghyeon.rw@gmail.com), Github Id: mindgitrwx
-
 ---
 
 ## 저작권
