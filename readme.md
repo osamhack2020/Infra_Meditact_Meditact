@@ -36,15 +36,15 @@
 
 ## 팀 정보
 
-- [김성일](https://github.com/kshired) ??, E-mail :  shiroed1211@gmail.com
+- [김성일 ??](https://github.com/kshired) E-mail :  shiroed1211@gmail.com
 
-- [강재현](https://github.com/ashhyun) 상병, E-mail : youkind98@gmail.com
+- [강재현 상병](https://github.com/ashhyun) E-mail : youkind98@gmail.com
 
-- [이현훈](https://github.com/hyeonhoonlee) 대위(군의관), E-mail : jackli0373@gmail.com
+- [이현훈 대위(군의관)](https://github.com/hyeonhoonlee)  E-mail : jackli0373@gmail.com
 
-- [김찬호](https://github.com/chanhhoo) 일병, E-mail :  hpyho33@naver.com
+- [김찬호 일병](https://github.com/chanhhoo) E-mail :  hpyho33@naver.com
 
-- [여종현](https://github.com/mindgitrwx) 상병, E-mail :  jonghyeon.rw@gmail.com
+- [여종현 상병](https://github.com/mindgitrwx) E-mail :  jonghyeon.rw@gmail.com
 
 ---
 
