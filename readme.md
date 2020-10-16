@@ -6,13 +6,17 @@
 
 ## 프로젝트 소개
 
+
+
+
 ---
 
 ## 기술 스택
 
 ###Deep Learning
  - Tensorflow 2.0
- - python 3.7
+ - Keras 2.3
+ - python 3.6
 
 ### Web Back-end
  - 
