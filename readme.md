@@ -15,7 +15,7 @@
 
 ## 기술 스택
 
-###Deep Learning
+### Deep Learning
  - Tensorflow 2.0
  - Keras 2.3
  - Python 3.6
