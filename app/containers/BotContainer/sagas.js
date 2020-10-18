@@ -56,7 +56,7 @@ export function* restartConversationNow() {
 }
 
 export function* sendMessageFromUserNow(action) {
-  const userMessage = action.payload.userMessage;
+  const userMessage   = action.payload.userMessage;
   const toBotBubbleId = action.payload.toBotBubbleId;
   // Send array message
   if (Array.isArray(userMessage) && userMessage.length > 0) {
@@ -64,7 +64,7 @@ export function* sendMessageFromUserNow(action) {
   } else if (userMessage !== '') {
     yield put(addDialogueFromUser(StateFormatter.userMessage(userMessage)));
   }
-  const response = BotMind.getNextBubble(toBotBubbleId, userMessage);
+  const response   = BotMind.getNextBubble(toBotBubbleId, userMessage);
   const nextBubble = response.nextBubble;
   yield put(turnOnBotThinking());
 
@@ -96,15 +96,8 @@ export function* sendMessageFromUserNow(action) {
     }
 
     if (response.catchName) {
-      const foundNames = [];
-      Finder.name(userMessage).forEach((finding) => {
-        if (finding) {
-          foundNames.push(finding);
-        }
-      });
-      const theName = foundNames[0] || "Capt'n";
-      const userName = theName.charAt(0).toUpperCase() + theName.substr(1).toLowerCase();
-      yield put(saveUserName(userName));
+      const theName = userMessage || "군인";
+      yield put(saveUserName(theName));
     }
 
     if (response.catchCompanyName) {
@@ -175,7 +168,7 @@ function botThinkingTime(message) {
   if (!message) {
     return 3000;
   }
-  let time = 1000;
+  let time = 500;
   if (window.location.href.indexOf('localhost') > -1) {
     time = 0;
   }

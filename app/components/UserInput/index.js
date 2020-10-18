@@ -57,7 +57,7 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
       case 'endOfConversation': {
         return this.handlegetEndOfConversation(inputType);
       }
-      default:
+      default: 
     }
     return null;
   }
@@ -66,12 +66,12 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
     return (
       <article className="qt-chat__field">
         <input
-          ref={(input) => (this.texthandleinput = input)}
-          className="qt-chat__input"
-          type="text"
-          placeholder={inputType.placeholder}
-          onKeyPress={this.handlehandleKeyPress.bind(this)}
-          onKeyUp={this.handletoggleSubmit.bind(this)}
+          ref         = {(input) => (this.texthandleinput = input)}
+          className   = "qt-chat__input"
+          type        = "text"
+          placeholder = {inputType.placeholder}
+          onKeyPress  = {this.handlehandleKeyPress.bind(this)}
+          onKeyUp     = {this.handletoggleSubmit.bind(this)}
           autoFocus
         />
         {this.handlegetSubmitButton()}
@@ -88,10 +88,10 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
     return (
       <article className="qt-chat__field">
         <input
-          ref={(input) => (this.texthandleinput = input)}
-          className="qt-chat__input"
-          type="text"
-          placeholder={inputType.placeholder}
+          ref         = {(input) => (this.texthandleinput = input)}
+          className   = "qt-chat__input"
+          type        = "text"
+          placeholder = {inputType.placeholder}
           disabled
         />
 
@@ -109,24 +109,24 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
     return (
       <article className="qt-chat__field">
         <input
-          ref={(input) => (this.texthandleinput = input)}
-          className="qt-chat__input"
-          type="text"
-          placeholder={inputType.placeholder}
+          ref         = {(input) => (this.texthandleinput = input)}
+          className   = "qt-chat__input"
+          type        = "text"
+          placeholder = {inputType.placeholder}
           disabled
         />
 
         <SubmitButton
           refresh
-          type="button"
-          onClick={this.handlerestartConvo.bind(this)}
+          type    = "button"
+          onClick = {this.handlerestartConvo.bind(this)}
         >
             Restart
           </SubmitButton>
         <SubmitButtonSmall
           refresh
-          type="button"
-          onClick={this.handlerestartConvo.bind(this)}
+          type    = "button"
+          onClick = {this.handlerestartConvo.bind(this)}
         >
         </SubmitButtonSmall>
       </article>
@@ -135,11 +135,11 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
 
   handlegetSelect(inputType) {
     const options = inputType.options.map((option) => (<a
-      tabIndex={0}
-      role="button"
-      key={option.label.replace(/\W/gi, '').toLowerCase()}
-      className="qt-chat__reply"
-      onClick={() => this.handlesendUserMessage(option.label)}
+      tabIndex  = {0}
+      role      = "button"
+      key       = {option.label.replace(/' '/gi, '')}
+      className = "qt-chat__reply"
+      onClick   = {() => this.handlesendUserMessage(option.label)}
     > {option.label} </a>));
     return (
       <article className="qt-chat__field">
@@ -157,13 +157,13 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
         <div className="qt-chat__tagsContainer" >
           <article className="qt-chat__tags" style={{ width: `${230 * this.props.inputType.tags.length}px` }}>
             {inputType.tags.map((tag) => (
-              <div key={tag.label.replace(/\W/gi, '').toLowerCase()} className="qt-chat__tag" >
+              <div key={tag.label.replace(/\W/gi, '')} className="qt-chat__tag" >
                 <input
-                  type="checkbox"
-                  value={tag.value}
-                  onKeyPress={this.handlehandleKeyPress.bind(this)}
-                  onClick={this.handletoggleSubmit.bind(this)}
-                  ref={(checkbox) => this.tags.push(checkbox)}
+                  type       = "checkbox"
+                  value      = {tag.value}
+                  onKeyPress = {this.handlehandleKeyPress.bind(this)}
+                  onClick    = {this.handletoggleSubmit.bind(this)}
+                  ref        = {(checkbox) => this.tags.push(checkbox)}
                 /> <label htmlFor={tag}> { tag.label } </label>
               </div>
                 ))}
@@ -178,10 +178,10 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
   handlegetSubmitButton() {
     return (
       <SubmitButton
-        hasTags={this.props.inputType.type === 'tags'}
-        type="button"
-        onClick={this.handlehandleSubmit.bind(this)}
-        disabled={!this.props.canSubmit}
+        hasTags  = {this.props.inputType.type === 'tags'}
+        type     = "button"
+        onClick  = {this.handlehandleSubmit.bind(this)}
+        disabled = {!this.props.canSubmit}
       >
             Submit
         </SubmitButton>
@@ -191,19 +191,19 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
   handlegetSubmitButtonSmall() {
     return (
       <SubmitButtonSmall
-        hasTags={this.props.inputType.type === 'tags'}
-        type="button"
-        onClick={this.handlehandleSubmit.bind(this)}
-        disabled={!this.props.canSubmit}
+        hasTags  = {this.props.inputType.type === 'tags'}
+        type     = "button"
+        onClick  = {this.handlehandleSubmit.bind(this)}
+        disabled = {!this.props.canSubmit}
       />
     );
   }
 
   handlesubmitTextField() {
     // this.props.sendUserMessage(this.texthandleinput.value);
-    let userMessage = '';
-    userMessage = this.texthandleinput.value;
-    this.texthandleinput.value = '';
+    let userMessage                = '';
+        userMessage                = this.texthandleinput.value;
+        this.texthandleinput.value = '';
     this.handlesendUserMessage(userMessage);
   }
 
@@ -218,15 +218,15 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
 
   handlehandleSubmit() {
     switch (this.props.inputType.type) {
-      case 'tags':
+      case 'tags': 
         this.handlesendTags();
         this.props.disableSubmit();
         break;
-      case 'fieldText':
+      case 'fieldText': 
         this.handlesubmitTextField();
         this.props.disableSubmit();
         break;
-      default:
+      default: 
         break;
     }
   }
@@ -240,7 +240,7 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
           return this.handlegetOptionCards(inputType);
         }
         case 'fieldText': {
-          userMessage = this.texthandleinput.value;
+          userMessage                = this.texthandleinput.value;
           this.texthandleinput.value = '';
           this.props.disableSubmit();
           break;
@@ -251,10 +251,10 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
         }
         case 'tags': {
           const checkedhandletags = this.tags.filter((tag) => tag && tag.checked);
-          userMessage = checkedhandletags.map((tag) => tag.value);
+                userMessage       = checkedhandletags.map((tag) => tag.value);
           break;
         }
-        default:
+        default: 
       }
       this.handlesendUserMessage(userMessage);
     }
@@ -281,12 +281,12 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
         }
         break;
       }
-      default:
+      default: 
     }
   }
   render() {
     const inputType = this.handlegetInputType();
-    const label = this.handlegetLabel();
+    const label     = this.handlegetLabel();
     return (
       <UserOptions>
         {label}
@@ -298,12 +298,12 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
 
 UserInput.propTypes = {
   restartConversation: PropTypes.func.isRequired,
-  sendUserMessage: PropTypes.func.isRequired,
-  enableSubmit: PropTypes.func.isRequired,
-  disableSubmit: PropTypes.func.isRequired,
-  inputType: PropTypes.object.isRequired,
-  canSubmit: PropTypes.bool.isRequired,
-  currentBotBubble: PropTypes.string.isRequired,
+  sendUserMessage    : PropTypes.func.isRequired,
+  enableSubmit       : PropTypes.func.isRequired,
+  disableSubmit      : PropTypes.func.isRequired,
+  inputType          : PropTypes.object.isRequired,
+  canSubmit          : PropTypes.bool.isRequired,
+  currentBotBubble   : PropTypes.string.isRequired,
 };
 
 export default UserInput;
