@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   release:
-    image: icalialabs/alpha:release
+    image: mindgitrwx/alpha:release
     build:
       context: .
       target: release
@@ -10,7 +10,7 @@ services:
       - 3000:3000
 
   alpha:
-    image: icalialabs/alpha:development
+    image: mindgitrwx/alpha:development
     build:
       context: .
       target: development
