@@ -13,7 +13,7 @@ const common_greetings_negative = /(?!(^hello|^hi|^hey|^hllo|^sup|^hola)\b)\w+/i
 
 const questions = {
   start: {
-    botPrompt: 'Hello Human, my name is <strong>Alpha</strong>, I am an awesome <strong>chatbot</strong>',
+    botPrompt: '안녕하세요? 국군장병의 건강을 책임지는 AI로봇',
     answers  : [
       {
         nextId: 'myPurpose',
@@ -21,7 +21,7 @@ const questions = {
     ],
   },
   myPurpose: {
-    botPrompt: 'My purpose is to be a simple chatbot that <strong>guides users</strong> and <strong>is able to make decisions and make recommendations.</strong>',
+    botPrompt: '메디텍트입니다.',
     answers  : [
       {
         nextId: 'yourName',
@@ -29,7 +29,7 @@ const questions = {
     ],
   },
   yourName: {
-    botPrompt: 'So, What is your name?',
+    botPrompt: '당신의 이름은 무엇인가요?',
     input    : textField(),
     answers  : [
       {
@@ -44,7 +44,7 @@ const questions = {
     ],
   },
   greetings_notAName: {
-	  botPrompt: 'Hello! <strong>I\'m still learning how to talk to humans</strong>, which means my conversational range is not very wide yet... 😅',
+	  botPrompt: '아직 저도 배워가고 있는 로봇이에요. 무슨 말인 지 잘 모르겠어요. 다시 입력해 줄 수 있나요? 😅',
 	  answers  : [
 	    {
 	      nextId: 'greetings_whatsYourNameAgain',
