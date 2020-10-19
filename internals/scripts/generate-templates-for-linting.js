@@ -5,9 +5,9 @@
  */
 
 const nodePlop = require('node-plop');
-const path = require('path');
-const chalk = require('chalk');
-const rimraf = require('rimraf');
+const path     = require('path');
+const chalk    = require('chalk');
+const rimraf   = require('rimraf');
 
 const xmark = require('./helpers/xmark');
 
@@ -32,7 +32,7 @@ const removeTestsDirFrom = (relativePath) => () => rimraf.sync(path.join(__dirna
 
 const plop = nodePlop('./index');
 
-const componentGen = plop.getGenerator('component');
+const componentGen     = plop.getGenerator('component');
 const ComponentEsclass = componentGen.runActions({ name: 'RbGeneratedComponentEsclass', type: 'ES6 Class', wantMessages: true })
   .then(checkForErrors)
   .then(removeTestsDirFrom('components/RbGeneratedComponentEsclass'))
@@ -50,24 +50,24 @@ componentGen.runActions({ name: 'RbGeneratedComponentStatelessfunction', type: '
 
 const containerGen = plop.getGenerator('container');
 containerGen.runActions({
-  name: 'RbGeneratedContainerPureComponent',
-  component: 'PureComponent',
-  wantHeaders: true,
+  name                 : 'RbGeneratedContainerPureComponent',
+  component            : 'PureComponent',
+  wantHeaders          : true,
   wantActionsAndReducer: true,
-  wantSagas: true,
-  wantMessages: true
+  wantSagas            : true,
+  wantMessages         : true
 })
   .then(checkForErrors)
   .then(removeTestsDirFrom('containers/RbGeneratedContainerPureComponent'))
   .catch(reportErrorsFor('container/PureComponent'));
 
 const ContainerComponent = containerGen.runActions({
-  name: 'RbGeneratedContainerComponent',
-  component: 'Component',
-  wantHeaders: true,
+  name                 : 'RbGeneratedContainerComponent',
+  component            : 'Component',
+  wantHeaders          : true,
   wantActionsAndReducer: true,
-  wantSagas: true,
-  wantMessages: true
+  wantSagas            : true,
+  wantMessages         : true
 })
   .then(checkForErrors)
   .then(removeTestsDirFrom('containers/RbGeneratedContainerComponent'))

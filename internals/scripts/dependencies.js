@@ -5,16 +5,15 @@ if (process.env.NODE_ENV === 'production') {
 
 require('shelljs/global');
 
-const path = require('path');
-const fs = require('fs');
-const exists = fs.existsSync;
-const writeFile = fs.writeFileSync;
-
-const defaults = require('lodash/defaultsDeep');
-const pkg = require(path.join(process.cwd(), 'package.json'));
-const config = require('../config');
-const dllConfig = defaults(pkg.dllPlugin, config.dllPlugin.defaults);
-const outputPath = path.join(process.cwd(), dllConfig.path);
+const path            = require('path');
+const fs              = require('fs');
+const exists          = fs.existsSync;
+const writeFile       = fs.writeFileSync;
+const defaults        = require('lodash/defaultsDeep');
+const pkg             = require(path.join(process.cwd(), 'package.json'));
+const config          = require('../config');
+const dllConfig       = defaults(pkg.dllPlugin, config.dllPlugin.defaults);
+const outputPath      = path.join(process.cwd(), dllConfig.path);
 const dllManifestPath = path.join(outputPath, 'package.json');
 
 /**
@@ -32,11 +31,11 @@ if (!exists(dllManifestPath)) {
   writeFile(
     dllManifestPath,
     JSON.stringify(defaults({
-      name: 'react-boilerplate-dlls',
-      private: true,
-      author: pkg.author,
+      name      : 'react-boilerplate-dlls',
+      private   : true,
+      author    : pkg.author,
       repository: pkg.repository,
-      version: pkg.version,
+      version   : pkg.version,
     }), null, 2),
     'utf8'
   );

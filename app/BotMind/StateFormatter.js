@@ -2,15 +2,15 @@ import * as bc from './BotConstants'
 
 export function defaultUserInput() {
   return {
-    label: null,
-    type: 'disabledFieldText',
+    label      : null,
+    type       : 'disabledFieldText',
     placeholder: 'Please wait...',
   };
 }
 
 export function userMessage(message, type = 'text') {
   return {
-    from: 'user',
+    from   : 'user',
     bubbles: [
       {
         content: message,
@@ -22,7 +22,7 @@ export function userMessage(message, type = 'text') {
 
 export function botMessage(message, type = "text", varName = "") {
   return {
-    from: 'bot',
+    from   : 'bot',
     bubbles: [
       {
         content: message,
@@ -35,19 +35,19 @@ export function botMessage(message, type = "text", varName = "") {
 
 export function optionCards(optionCardsValues){
   const optionCardsInput = {
-    label: 'These are option cards!',
-    type: 'optionCards',
+    label      : 'These are option cards!',
+    type       : 'optionCards',
     optionCards: [
       {
-        title: 'Design',
+        title      : 'Design',
         description: 'I need someone to help with branding, UI/UX, web, or product design.No coding. Just Design.',
       },
       {
-        title: 'Design',
+        title      : 'Design',
         description: 'I need someone to help with branding, UI/UX, web, or product design.No coding. Just Design.',
       },
       {
-        title: 'Design',
+        title      : 'Design',
         description: 'I need someone to help with branding, UI/UX, web, or product design.No coding. Just Design.',
       },
     ],
@@ -57,24 +57,20 @@ export function optionCards(optionCardsValues){
 }
 
 export function selectField(optionsValues){
-
-  const options = optionsValues.map((optionValue) => { return { label: optionValue, value: optionValue }; } )
+  const options     = optionsValues.map((optionValue) => { return { label: optionValue, value: optionValue }; } )
   const selectInput = {
     label: null,
-    type: 'select',
+    type : 'select',
     options,
-  };
-
+  };  
   return selectInput;
 }
 
 export function tagsField(tagValues){
-
-  const tags = tagValues.map((tagValue) => { return { label: tagValue, value: tagValue }; } )
-
+  const tags      = tagValues.map((tagValue) => { return { label: tagValue, value: tagValue }; } )
   const tagsInput = {
     label: 'Choose all that apply: ',
-    type: 'tags',
+    type : 'tags',
     tags,
   };
 
@@ -83,8 +79,8 @@ export function tagsField(tagValues){
 
 export function textField(textFieldValue){
   const fieldTextInput = {
-    label: null,
-    type: 'fieldText',
+    label      : null,
+    type       : 'fieldText',
     placeholder: 'Type Something',
   };
 
@@ -93,7 +89,7 @@ export function textField(textFieldValue){
 
 export function disabledFieldText(){
   const fieldTextInput = {
-    type: 'disabledFieldText',
+    type       : 'disabledFieldText',
     placeholder: 'Please wait...',
   };
 
@@ -102,7 +98,7 @@ export function disabledFieldText(){
 
 export function endOfConversation(){
   const fieldTextInput = {
-    type: 'endOfConversation',
+    type       : 'endOfConversation',
     placeholder: '– ' + bc.name + ' left the conversation –',
   };
 

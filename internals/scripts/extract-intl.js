@@ -3,14 +3,14 @@
  * This script will extract the internationalization messages from all components
    and package them in the translation json files in the translations file.
  */
-const fs = require('fs');
-const nodeGlob = require('glob');
+const fs        = require('fs');
+const nodeGlob  = require('glob');
 const transform = require('babel-core').transform;
 
 const animateProgress = require('./helpers/progress');
-const addCheckmark = require('./helpers/checkmark');
+const addCheckmark    = require('./helpers/checkmark');
 
-const pkg = require('../../package.json');
+const pkg     = require('../../package.json');
 const presets = pkg.babel.presets;
 const plugins = pkg.babel.plugins || [];
 
@@ -21,7 +21,7 @@ require('shelljs/global');
 
 // Glob to match all js files except test files
 const FILES_TO_PARSE = 'app/**/!(*.test).js';
-const locales = i18n.appLocales;
+const locales        = i18n.appLocales;
 
 const newLine = () => process.stdout.write('\n');
 
@@ -55,16 +55,16 @@ const writeFile = (fileName, data) => new Promise((resolve, reject) => {
 
 // Store existing translations into memory
 const oldLocaleMappings = [];
-const localeMappings = [];
+const localeMappings    = [];
 // Loop to run once per locale
 for (const locale of locales) {
-  oldLocaleMappings[locale] = {};
-  localeMappings[locale] = {};
+  oldLocaleMappings[locale]  = {};
+  localeMappings    [locale] = {};
   // File to store translation messages into
   const translationFileName = `app/translations/${locale}.json`;
   try {
     // Parse the old translation message JSON files
-    const messages = JSON.parse(fs.readFileSync(translationFileName));
+    const messages    = JSON.parse(fs.readFileSync(translationFileName));
     const messageKeys = Object.keys(messages);
     for (const messageKey of messageKeys) {
       oldLocaleMappings[locale][messageKey] = messages[messageKey];
@@ -99,15 +99,15 @@ const extractFromFile = async (fileName) => {
   try {
     const code = await readFile(fileName);
     // Use babel plugin to extract instances where react-intl is used
-    const { metadata: result } = await transform(code, { presets, plugins }); // object-shorthand
+    const { metadata: result } = await transform(code, { presets, plugins });  // object-shorthand
     for (const message of result['react-intl'].messages) {
       for (const locale of locales) {
         const oldLocaleMapping = oldLocaleMappings[locale][message.id];
         // Merge old translations into the babel extracted instances where react-intl is used
-        const newMsg = ( locale === DEFAULT_LOCALE) ? message.defaultMessage : '';
+        const          newMsg              = ( locale === DEFAULT_LOCALE) ? message.defaultMessage : '';
         localeMappings[locale][message.id] = (oldLocaleMapping)
           ? oldLocaleMapping
-          : newMsg;
+          :   newMsg;
       }
     }
   } catch (error) {
@@ -117,7 +117,7 @@ const extractFromFile = async (fileName) => {
 
 (async function main() {
   const memoryTaskDone = task('Storing language files in memory');
-  const files = await glob(FILES_TO_PARSE);
+  const files          = await glob(FILES_TO_PARSE);
   memoryTaskDone()
 
   const extractTaskDone = task('Run extraction on all files');

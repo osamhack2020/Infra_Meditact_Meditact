@@ -2,40 +2,40 @@
  * COMMON WEBPACK CONFIGURATION
  */
 
-const path = require('path');
+const path    = require('path');
 const webpack = require('webpack');
 
 module.exports = (options) => ({
-  entry: options.entry,
+  entry : options.entry,
   output: Object.assign({ // Compile into js/build.js
-    path: path.resolve(process.cwd(), 'build'),
+    path      : path.resolve(process.cwd(), 'build'),
     publicPath: '/',
   }, options.output), // Merge with env dependent settings
   module: {
     loaders: [{
-      test: /\.(js|jsx)$/, // Transform all .js files required somewhere with Babel
-      loader: 'babel-loader',
+      test   : /\.(js|jsx)$/,        // Transform all .js files required somewhere with Babel
+      loader : 'babel-loader',
       exclude: /node_modules/,
-      query: options.babelQuery,
+      query  : options.babelQuery,
     }, {
       // Do not transform vendor's CSS with CSS-modules
       // The point is that they remain in global scope.
       // Since we require these CSS files in our JS or CSS files,
       // they will be a part of our compilation either way.
       // So, no need for ExtractTextPlugin here.
-      test: /\.css$/,
+      test   : /\.css$/,
       include: /node_modules/,
       loaders: ['style-loader', 'css-loader'],
     }, {
-      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      test  : /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader',
     }, {
-      test: /\.(jpg|png|gif)$/,
-        loaders: [
+      test   : /\.(jpg|png|gif)$/,
+      loaders: [
           'file-loader',
           {
             loader: 'image-webpack-loader',
-            query: {
+            query : {
               mozjpeg: {
                 progressive: true,
               },
@@ -47,25 +47,25 @@ module.exports = (options) => ({
               },
               pngquant: {
                 quality: '65-90',
-                speed: 4,
+                speed  : 4,
               },
             },
           },
         ],
     }, {
-      test: /\.html$/,
+      test  : /\.html$/,
       loader: 'html-loader',
     }, {
-      test: /\.json$/,
+      test  : /\.json$/,
       loader: 'json-loader',
     },
     {
-      test: /\.json$/,
+      test  : /\.json$/,
       loader: 'json-loader',
     }, {
-      test: /\.(mp4|webm)$/,
+      test  : /\.(mp4|webm)$/,
       loader: 'url-loader',
-      query: {
+      query : {
         limit: 10000,
       },
     }],
@@ -87,7 +87,7 @@ module.exports = (options) => ({
     new webpack.NamedModulesPlugin(),
   ]),
   resolve: {
-    modules: ['app', 'node_modules'],
+    modules   : ['app', 'node_modules'],
     extensions: [
       '.js',
       '.jsx',
@@ -99,7 +99,7 @@ module.exports = (options) => ({
       'main',
     ],
   },
-  devtool: options.devtool,
-  target: 'web', // Make web variables accessible to webpack, e.g. window
+  devtool    : options.devtool,
+  target     : 'web',                       // Make web variables accessible to webpack, e.g. window
   performance: options.performance || {},
 });

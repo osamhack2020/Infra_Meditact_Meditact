@@ -11,13 +11,13 @@ export const getRecommendationBubble = (bags) => {
   let recommendation;
   Object.keys(bags).forEach (bagKey => {
     if (bags[bagKey] >= biggerPoints) {
-      biggerPoints = bags[bagKey];
+      biggerPoints   = bags[bagKey];
       recommendation = bagKey;
     }
   });
 
   return {
     hash: questions[recommendationBubbleIds[recommendation]],
-    key: recommendationBubbleIds[recommendation]
+    key : recommendationBubbleIds[recommendation]
   };
 };

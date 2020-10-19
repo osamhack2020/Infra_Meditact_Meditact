@@ -1,8 +1,8 @@
 // Important modules this config uses
-const path = require('path');
-const webpack = require('webpack');
+const path              = require('path');
+const webpack           = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
+const OfflinePlugin     = require('offline-plugin');
 
 module.exports = require('./webpack.base.babel')({
   // In production, we skip all hot-reloading stuff
@@ -12,32 +12,32 @@ module.exports = require('./webpack.base.babel')({
 
   // Utilize long-term caching by adding content hashes (not compilation hashes) to compiled assets
   output: {
-    filename: '[name].[chunkhash].js',
+    filename     : '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      children: true,
+      name     : 'vendor',
+      children : true,
       minChunks: 2,
-      async: true,
+      async    : true,
     }),
 
     // Minify and optimize the index.html
     new HtmlWebpackPlugin({
       template: 'app/index.html',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
+      minify  : {
+        removeComments               : true,
+        collapseWhitespace           : true,
+        removeRedundantAttributes    : true,
+        useShortDoctype              : true,
+        removeEmptyAttributes        : true,
         removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true,
+        keepClosingSlash             : true,
+        minifyJS                     : true,
+        minifyCSS                    : true,
+        minifyURLs                   : true,
       },
       inject: true,
     }),
@@ -46,7 +46,7 @@ module.exports = require('./webpack.base.babel')({
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
     new OfflinePlugin({
       relativePaths: false,
-      publicPath: '/',
+      publicPath   : '/',
 
       // No need to cache .htaccess. See http://mxs.is/googmp,
       // this is applied before any match in `caches` section

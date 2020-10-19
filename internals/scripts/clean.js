@@ -10,7 +10,6 @@ if (!test('-e', 'internals/templates')) {
   echo('The example is deleted already.');
   exit(1);
 }
-
 process.stdout.write('Cleanup started...');
 
 // Reuse existing LanguageProvider and i18n tests

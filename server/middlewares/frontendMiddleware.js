@@ -1,20 +1,20 @@
 /* eslint-disable global-require */
-const express = require('express');
-const path = require('path');
+const express     = require('express');
+const path        = require('path');
 const compression = require('compression');
-const pkg = require(path.resolve(process.cwd(), 'package.json'));
+const pkg         = require(path.resolve(process.cwd(), 'package.json'));
 
 // Dev middleware
 const addDevMiddlewares = (app, webpackConfig) => {
-  const webpack = require('webpack');
+  const webpack              = require('webpack');
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
-  const compiler = webpack(webpackConfig);
-  const middleware = webpackDevMiddleware(compiler, {
-    noInfo: true,
+  const compiler             = webpack(webpackConfig);
+  const middleware           = webpackDevMiddleware(compiler, {
+    noInfo    : true,
     publicPath: webpackConfig.output.publicPath,
-    silent: true,
-    stats: 'errors-only',
+    silent    : true,
+    stats     : 'errors-only',
   });
 
   app.use(middleware);
