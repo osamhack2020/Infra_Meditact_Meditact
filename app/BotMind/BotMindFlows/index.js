@@ -8,10 +8,12 @@ import {
 } from '../StateFormatter';
 import * as RTypes from '../responseTypes';
 
-const common_greetings          = /(^hello|^hllo|^hi|^hey|^hola|^sup)\b\s?.*$/i;
-const common_greetings_negative = /(?!(^hello|^hi|^hey|^hllo|^sup|^hola)\b)\w+/i;
+//const hangul_negative          = /(^hello|^hllo|^hi|^hey|^hola|^sup)\b\s?.*$/i;
+//const hangul_negative_negative = /(?!(^hello|^hi|^hey|^hllo|^sup|^hola)\b)\w+/i;
+const hangul_negative          = /(?!([가-힣]+)\b)\w+/i;
+const hangul_negative_negative = /^[가-힣]+/i;
 
-const questions = {
+const questions                 = {
   start: {
     botPrompt: '안녕하세요? 국군장병의 건강을 책임지는 AI로봇',
     answers  : [
@@ -33,18 +35,18 @@ const questions = {
     input    : textField(),
     answers  : [
       {
-        answer: common_greetings,
+        answer: hangul_negative,
         nextId: 'greetings_notAName',
       },
       {
-        answer   : common_greetings_negative,
+        answer   : hangul_negative_negative,
         catchName: true,
         nextId   : 'asYouCanSee',
       },
     ],
   },
   greetings_notAName: {
-	  botPrompt: '아직 저도 배워가고 있는 로봇이에요. 무슨 말인 지 잘 모르겠어요. 다시 입력해 줄 수 있나요? 😅',
+	  botPrompt: '아직 저도 배워가고 있는 로봇이에요. 무슨 말인 지 잘 모르겠어요.  😅',
 	  answers  : [
 	    {
 	      nextId: 'greetings_whatsYourNameAgain',
@@ -52,29 +54,30 @@ const questions = {
 	  ],
   },
   greetings_whatsYourNameAgain: {
-	  botPrompt: 'So what’s <strong>your name</strong>?',
+	  botPrompt: '당신의 이름을 <strong>한글 한 단어</strong>로 말씀해주실 수 있나요?',
 	  input    : textField(),
 	  answers  : [
 	    {
-	      answer: common_greetings,
+	      answer: hangul_negative,
 	      nextId: 'greetings_notAName',
 	    },
 	    {
-	      answer   : common_greetings_negative,
+	      answer   : hangul_negative_negative,
 	      catchName: true,
 	      nextId   : 'asYouCanSee',
 	    },
 	  ],
   },
   asYouCanSee: {
-    botPrompt: 'So <strong>@varName</strong>, as you can see I can remember things the user says.',
+    botPrompt: '안녕하세요. <strong>@varName</strong> 님, 무엇을 도와드릴까요?',
     type     : RTypes.TRANSFORMED_TEXT,
     varName  : 'userName',
     answers  : [
-			{ nextId: 'emojisHtml' },
+			{ nextId: 'select' },
     ],
   },
-  emojisHtml: {
+  /*
+    emojisHtml: {
     botPrompt: "I can enhance my dialogue with emojis 🎉 and also using inline <span style='color:purple; background-color:white;font-weight:bold'>HTML</span>",
     answers  : [
 			{ nextId: 'mediaBubbles1' },
@@ -95,12 +98,28 @@ const questions = {
       },
     ],
   },
+  */
+  //진료예약건강상담서비스병원안내의료진 정보서류영상발급MRI, CT 예약 현황기존
   select: {
-    botPrompt: 'I can also offer <strong>predefined options</strong> to choose from:',
+    botPrompt: '여기중에서 하나 선택하세요:',
     varName  : 'userName',
-    input    : selectField(['Dope!', 'Cool!']),
+    input    : selectField(['진료예약','건강상담','병원안내','의료진','MRI예약현황']),
     answers  : [
-			{ nextId: 'tags' },
+      {
+        answer   : '진료예약',
+        nextId   : 'cool',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '건강상담',
+        nextId   : 'hmm',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : 'MRI예약현황',
+        nextId   : 'cool',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
     ],
   },
   tags: {
@@ -147,7 +166,7 @@ const questions = {
     ],
   },
   cool: {
-    botPrompt: 'Cool! 😎',
+    botPrompt: '링크를 클릭하세요 😎',
     answers  : [
       {
         nextId: 'question2',
@@ -155,10 +174,12 @@ const questions = {
     ],
   },
   hmm: {
-    botPrompt: 'Hmmm... 🤔',
+    varName  : 'userName',
+    botPrompt: '당신의 건강 상태는 지금 어떤가요? 🤔',
+    input    : textField(),
     answers  : [
       {
-        nextId: 'question2',
+        nextId: 'question3',
       },
     ],
   },
@@ -171,26 +192,11 @@ const questions = {
     ],
   },
   question2: {
-    botPrompt: 'Do you know what the <strong>airspeed velocity of an <em>unladen swallow</em></strong> is? 🐦',
-    input    : selectField(['African or European?', '10 m/s', "Don't ask me stupid questions."]),
+    botPrompt: '<a href="https://www.google.com">https://국군수도병원주소링크</a> 🐦',
+    //input    : selectField(['African or European?', '10 m/s', "Don't ask me stupid questions."]),
     answers  : [
       {
-        answer                      : 'African or European?',
-        shouldEstimateRecommendation: true,
-        nextId                      : null,
-        sumToBags                   : [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
-      },
-      {
-        answer                      : '10 m/s',
-        shouldEstimateRecommendation: true,
-        nextId                      : null,
-        sumToBags                   : [{ name: 'shroedingersCat', points: 1 }, { name: 'recursion', points: 1 }],
-      },
-      {
-        answer                      : "Don't ask me stupid questions.",
-        shouldEstimateRecommendation: true,
-        nextId                      : null,
-        sumToBags                   : [{ name: 'recursion', points: 2 }],
+        nextId: 'select',
       },
     ],
   },
