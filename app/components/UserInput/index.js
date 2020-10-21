@@ -184,7 +184,7 @@ class UserInput extends React.Component { // eslint-disable-line react/prefer-st
         disabled = {!this.props.canSubmit}
       >
             Submit
-        </SubmitButton>
+      </SubmitButton>
     );
   }
 
