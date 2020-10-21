@@ -31,23 +31,26 @@ FROM runtime AS development
 
 RUN npm config set scripts-prepend-node-path true
 
-# Step 6: Copy the rest of the application code
+# Step 6: Install pip packages
+RUN pip3 install flask_cors
+
+# Step 7: Copy the rest of the application code
 ADD . /code
 
 # III: Release stage: ==========================================================
 # In this stage we'll add the current code from the project's source, so we can
 # build the application
 
-# Step 7: Start off from the development stage image:
+# Step 8: Start off from the development stage image:
 FROM runtime AS release
 
-# Step 8: Copy from app code from the "development" stage, which at this point
+# Step 9: Copy from app code from the "development" stage, which at this point
 COPY --from=development /code /code
 
-# Step 9: Install the dependencies via yarn and
+# Step 10: Install the dependencies via yarn and
 # build the application for production
 RUN yarn install \
     && npm run build
 
-# Step 10: Set the default command
+# Step 11: Set the default command
 CMD yarn start:prod
