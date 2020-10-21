@@ -176,10 +176,9 @@ const questions                 = {
   hmm: {
     varName  : 'userName',
     botPrompt: '당신의 건강 상태는 지금 어떤가요? 🤔',
-    input    : textField(),
     answers  : [
       {
-        nextId: 'question3',
+        nextId: 'healthCheck',
       },
     ],
   },
@@ -200,26 +199,31 @@ const questions                 = {
       },
     ],
   },
-  rickAndMorty: {
-    botPrompt: 'Hey, I like you <strong>@varName</strong>!',
+  healthCheck: {
+    botPrompt: '<strong>@varName</strong> 장병님. 건강 상태를 구체적으로 물어주세요 (예: 머리가 자주 아파요)',
+    input    : textField(),
     type     : RTypes.TRANSFORMED_TEXT,
     varName  : 'userName',
     answers  : [
       {
-        nextId: 'gottaGive',
+        answer     : 'hangul_healthCheck',
+        catchHealth: true,
+        nextId     : 'clinicThinking',
       },
     ],
   },
-  gottaGive: {
-    botPrompt: 'For demonstrative purposes I gotta give you some kind of recommendation, so...',
+  clinicThinking: {
+    botPrompt: '어디로 가야 할 지 알려드릴게요. 조금만 기다려주세요!',
     answers  : [
       {
-        nextId: 'rickAndMorty2',
+        nextId: 'clinicAnswer',
       },
     ],
   },
-  rickAndMorty2: {
-    botPrompt: "My best recommendation is you should go and watch something <a href='www.adultswim.com/videos/rick-and-morty/'>fun</a>!",
+  clinicAnswer: {
+    botPrompt: "<strong>@varName</strong> 을 가야 할거같네요 <! href='www.adultswim.com/videos/rick-and-morty/'>!",
+    type     : RTypes.TRANSFORMED_TEXT,
+    varName  : 'clinic',
     answers  : [
       {
         nextId: 'rickAndMorty3',
