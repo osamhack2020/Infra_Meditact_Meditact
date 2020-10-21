@@ -19,25 +19,26 @@ export class UserInputContainer extends React.Component { // eslint-disable-line
     const data = this.props.UserInputContainer;
     return (
       <UserInput
-        inputType={data.currentInput}
-        currentBotBubble={data.currentBotBubble}
-        sendUserMessage={this.handleSubmit.bind(this)}
-        restartConversation={this.props.restartConversation.bind(this)}
-        enableSubmit={this.props.enableSubmit.bind(this)}
-        disableSubmit={this.props.disableSubmit.bind(this)}
-        userName={data.userName}
-        canSubmit={data.canSubmit}
+        inputType           = {data.currentInput}
+        currentBotBubble    = {data.currentBotBubble}
+        sendUserMessage     = {this.handleSubmit.bind(this)}
+        restartConversation = {this.props.restartConversation.bind(this)}
+        enableSubmit        = {this.props.enableSubmit.bind(this)}
+        disableSubmit       = {this.props.disableSubmit.bind(this)}
+        userName            = {data.userName}
+        clinic              = {data.clinic}
+        canSubmit           = {data.canSubmit}
       />
     );
   }
 }
 
 UserInputContainer.propTypes = {
-  sendUserMessage: PropTypes.func.isRequired,
-  enableSubmit: PropTypes.func.isRequired,
-  disableSubmit: PropTypes.func.isRequired,
+  sendUserMessage    : PropTypes.func.isRequired,
+  enableSubmit       : PropTypes.func.isRequired,
+  disableSubmit      : PropTypes.func.isRequired,
   restartConversation: PropTypes.func.isRequired,
-  UserInputContainer: PropTypes.object.isRequired,
+  UserInputContainer : PropTypes.object.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -50,8 +51,8 @@ function mapDispatchToProps(dispatch) {
       dispatch(sendMessageFromUser(text, currentBotBubble));
       dispatch(resetCurrentInput());
     },
-    enableSubmit: () => { dispatch(enableSubmit()); },
-    disableSubmit: () => { dispatch(disableSubmit()); },
+    enableSubmit       : () => { dispatch(enableSubmit()); },
+    disableSubmit      : () => { dispatch(disableSubmit()); },
     restartConversation: () => { dispatch(restartConversation()); },
   };
 }

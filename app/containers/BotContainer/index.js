@@ -38,20 +38,21 @@ export class BotContainer extends React.Component { // eslint-disable-line react
     return (
       <div>
         <Helmet
-          title="Alpha"
-          meta={[
+          title = "Alpha"
+          meta  = {[
             { name: 'description', content: 'Description of BotContainer' },
           ]}
         />
         <BotComponent
-          name="Alpha"
-          conversation={data.conversation}
-          active={data.active}
-          expanded={data.expanded}
-          activateBot={this.handleActivateBot.bind(this)}
-          userName={data.userName}
-          companyName={data.companyName}
-          botThinking={data.botThinking}
+          name         = "Alpha"
+          conversation = {data.conversation}
+          active       = {data.active}
+          expanded     = {data.expanded}
+          activateBot  = {this.handleActivateBot.bind(this)}
+          userName     = {data.userName}
+          clinic       = {data.clinic}
+          companyName  = {data.companyName}
+          botThinking  = {data.botThinking}
         />
       </div>
     );
@@ -59,10 +60,10 @@ export class BotContainer extends React.Component { // eslint-disable-line react
 }
 
 BotContainer.propTypes = {
-  botContainer: PropTypes.object.isRequired,
-  activateBot: PropTypes.func.isRequired,
+  botContainer          : PropTypes.object.isRequired,
+  activateBot           : PropTypes.func.isRequired,
   estimateRecommendation: PropTypes.func.isRequired,
-  initConversation: PropTypes.func.isRequired,
+  initConversation      : PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => createStructuredSelector({
@@ -71,9 +72,9 @@ const mapStateToProps = (state) => createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    activateBot: () => dispatch(activateBot()),
+    activateBot           : () => dispatch(activateBot()),
     estimateRecommendation: (bags) => dispatch(estimateRecommendation(bags)),
-    initConversation: () => dispatch(initConversation()),
+    initConversation      : () => dispatch(initConversation()),
   };
 }
 

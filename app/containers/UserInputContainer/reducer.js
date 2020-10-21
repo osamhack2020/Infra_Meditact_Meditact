@@ -9,27 +9,30 @@ import * as C from './constants';
 import * as StateFormatter from '../../BotMind/StateFormatter';
 
 const initialState = fromJS({
-  currentInput: StateFormatter.defaultUserInput(),
-  canSubmit: false,
+  currentInput    : StateFormatter.defaultUserInput(),
+  canSubmit       : false,
   currentBotBubble: '',
-  userName: '',
+  userName        : '',
+  clinic          : '',
 });
 
 function userInputReducer(state = initialState, action) {
   switch (action.type) {
-    case C.SET_CURRENT_INPUT:
+    case C.SET_CURRENT_INPUT: 
       return state.set('currentInput', action.currentInput);
-    case C.RESET_CURRENT_INPUT:
+    case C.RESET_CURRENT_INPUT: 
       return state.set('currentInput', action.defaultInput);
-    case C.ENABLE_SUBMIT:
+    case C.ENABLE_SUBMIT: 
       return state.set('canSubmit', true);
-    case C.DISABLE_SUBMIT:
+    case C.DISABLE_SUBMIT: 
       return state.set('canSubmit', false);
-    case C.SET_CURRENT_BOT_BUBBLE:
+    case C.SET_CURRENT_BOT_BUBBLE: 
       return state.set('currentBotBubble', action.currentBotBubble);
-    case C.SAVE_USER_NAME:
+    case C.SAVE_USER_NAME: 
       return state.set('userName', action.userName);
-    default:
+    case C.ANALYZED_CLINIC: 
+      return state.set('clinic', action.clinic);
+    default: 
       return state;
   }
 }

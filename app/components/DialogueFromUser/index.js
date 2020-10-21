@@ -15,15 +15,15 @@ class DialogueFromUser extends React.Component { // eslint-disable-line react/pr
 
     return bubbles.map((bubble, index) => {
       switch (bubble.type) {
-        case 'text':
+        case 'text': 
           return this.textBubble(bubble, index);
-        case 'link':
+        case 'link': 
           return this.linkBubble(bubble, index);
-        case 'media':
+        case 'media': 
           return this.mediaBubble(bubble, index);
-        case 'array':
+        case 'array': 
           return this.arrayBubble(bubble, index);
-        default:
+        default: 
           return this.textBubble(bubble, index);
       }
     });
@@ -90,11 +90,13 @@ class DialogueFromUser extends React.Component { // eslint-disable-line react/pr
 DialogueFromUser.propTypes = {
   dialogue: PropTypes.object,
   userName: PropTypes.string,
+  clinic  : PropTypes.string,
 };
 
 DialogueFromUser.defaultProps = {
   dialogue: {},
   userName: '',
+  clinic  : '',
 };
 
 export default DialogueFromUser;

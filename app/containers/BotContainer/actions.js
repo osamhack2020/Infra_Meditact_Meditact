@@ -30,7 +30,7 @@
   });
 
   export const resetCurrentInput = () => ({
-    type: C.RESET_CURRENT_INPUT,
+    type        : C.RESET_CURRENT_INPUT,
     defaultInput: StateFormatter.defaultUserInput(),
   });
 
@@ -77,7 +77,7 @@
   });
 
   export const sumToBags = (sumToBagsValues) => ({
-    type: C.ADD_POINTS_TO_BAGS,
+    type     : C.ADD_POINTS_TO_BAGS,
     sumToBags: sumToBagsValues,
   });
 
@@ -105,6 +105,11 @@
     type: C.SEND_MAIL_TO_OWNER_WITH_SUMMARY,
   });
 
+  export const analyzedClinic = (clinic) => ({
+    type: C.ANALYZED_CLINIC,
+    clinic,
+  });
+
   export const dontSendMailToOwnerWithSummary = () => ({
     type: C.DONT_SEND_MAIL_TO_OWNER_WITH_SUMMARY,
   });
@@ -122,7 +127,7 @@
   });
 
   export const sendMessageFromUser = (userMessage, toBotBubbleId) => ({
-    type: C.SEND_MESSAGE,
+    type   : C.SEND_MESSAGE,
     payload: {
       userMessage,
       toBotBubbleId,
@@ -130,7 +135,7 @@
   });
 
   export const estimateRecommendation = (bags) => ({
-    type: C.ESTIMATE_RECOMMENDATION_NOW,
+    type   : C.ESTIMATE_RECOMMENDATION_NOW,
     payload: bags,
   });
 

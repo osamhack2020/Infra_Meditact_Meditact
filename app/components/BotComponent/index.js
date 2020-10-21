@@ -27,10 +27,11 @@ function BotComponent(props) {
       <section className={`qt-chat ${sizeClass} ${activeClassName}`}>
         <BotHeaderContainer />
         <Conversation
-          conversation={props.conversation}
-          userName={props.userName}
-          companyName={props.companyName}
-          botThinking={props.botThinking}
+          conversation = {props.conversation}
+          userName     = {props.userName}
+          clinic       = {props.clinic}
+          companyName  = {props.companyName}
+          botThinking  = {props.botThinking}
         />
         <UserInputContainer />
       </section>
@@ -39,19 +40,21 @@ function BotComponent(props) {
 }
 
 BotComponent.propTypes = {
-  active: PropTypes.bool.isRequired,
-  companyName: PropTypes.string,
+  active      : PropTypes.bool.isRequired,
+  companyName : PropTypes.string,
   conversation: PropTypes.array.isRequired,
-  userName: PropTypes.string,
-  botThinking: PropTypes.bool,
-  expanded: PropTypes.bool,
+  userName    : PropTypes.string,
+  clinic      : PropTypes.string,
+  botThinking : PropTypes.bool,
+  expanded    : PropTypes.bool,
 };
 
 BotComponent.defaultProps = {
   companyName: '',
-  userName: '',
+  userName   : '',
+  clinic     : '',
   botThinking: false,
-  expanded: false,
+  expanded   : false,
 };
 
 export default BotComponent;

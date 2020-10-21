@@ -40,6 +40,7 @@ export const getNextBubble = (bubbleId, userAnswer = "") => {
   const shouldMailRecommendation     = jumpToBubbleId.shouldMailRecommendation;
   const catchMail                    = jumpToBubbleId.catchMail;
   const catchName                    = jumpToBubbleId.catchName;
+  const catchHealth                  = jumpToBubbleId.catchHealth;
   const catchCompanyName             = jumpToBubbleId.catchCompanyName;
   const catchPhone                   = jumpToBubbleId.catchPhone;
   const finishConversation           = jumpToBubbleId.finishConversation;
@@ -53,6 +54,7 @@ export const getNextBubble = (bubbleId, userAnswer = "") => {
            catchPhone,
            finishConversation,
            catchName,
+           catchHealth,
            catchCompanyName,
            sendAnalytics 
          };

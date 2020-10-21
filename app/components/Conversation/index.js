@@ -47,17 +47,19 @@ class Conversation extends React.Component {// eslint-disable-line react/prefer-
     return conversation.map((dialogue) => {
       if (dialogue.from === 'bot') {
         return (<DialogueFromBot
-          key={dialogue.id}
-          dialogue={dialogue}
-          companyName={this.props.companyName}
-          userName={this.props.userName}
+          key         = {dialogue.id}
+          dialogue    = {dialogue}
+          companyName = {this.props.companyName}
+          userName    = {this.props.userName}
+          clinic      = {this.props.clinic}
         />);
       } else if (dialogue.from === 'user') {
         return (<DialogueFromUser
-          key={dialogue.id}
-          dialogue={dialogue}
-          companyName={this.props.companyName}
-          userName={this.props.userName}
+          key         = {dialogue.id}
+          dialogue    = {dialogue}
+          companyName = {this.props.companyName}
+          userName    = {this.props.userName}
+          clinic      = {this.props.clinic}
         />);
       }
       return null;
@@ -83,13 +85,15 @@ class Conversation extends React.Component {// eslint-disable-line react/prefer-
 
 Conversation.propTypes = {
   conversation: PropTypes.array.isRequired,
-  userName: PropTypes.string,
-  companyName: PropTypes.string,
-  botThinking: PropTypes.bool,
+  userName    : PropTypes.string,
+  clinic      : PropTypes.string,
+  companyName : PropTypes.string,
+  botThinking : PropTypes.bool,
 };
 
 Conversation.defaultProps = {
-  userName: '',
+  userName   : '',
+  clinic     : '',
   companyName: '',
   botThinking: false,
 };

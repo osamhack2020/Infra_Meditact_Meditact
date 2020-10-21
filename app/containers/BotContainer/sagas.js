@@ -4,6 +4,7 @@ import * as C from './constants';
 import * as StateFormatter from '../../BotMind/StateFormatter';
 import * as RTypes from '../../BotMind/responseTypes';
 import * as BotMind from '../../BotMind/BotMind';
+import * as MessageSender from '../../BotMind/MessageSender';
 import Finder from '../../BotMind/Interpreter';
 import {
   turnOnBotThinking,
@@ -19,6 +20,7 @@ import {
   saveCompanyName,
   saveUserPhone,
   turnOnMailRecommendation,
+  analyzedClinic,
   deactivateBot,
   dontEstimateRecommendation,
   addDialogueFromUser,
@@ -27,7 +29,7 @@ import {
   resetCurrentInput,
   resetBags,
 } from './actions';
-// Individual exports for testing
+
 export function* conversationStarter(initialBubble) {
   yield call(delay, 200);
   yield put(turnOffBotThinking());
@@ -96,8 +98,35 @@ export function* sendMessageFromUserNow(action) {
     }
 
     if (response.catchName) {
-      const theName = userMessage || "군인";
-      yield put(saveUserName(theName));
+      const userName = userMessage || "군인";
+      yield put(saveUserName(userName));
+    }
+
+    // TODO: make health Checker - have to change the name
+    /*
+    if (response.catchHealth) {
+      ;(async function foo(){
+        const theSentence  = await userMessage
+        const givenPromise = await MessageSender.sendMessageToServer("test", theSentence)
+        console.log(givenPromise)
+        const clinicCode = JSON.parse((await givenPromise).data['predict result'].replace(/'/g, '"'))['진료과 코드']
+        await console.log(clinicCode)
+        console.log('--------------t--------------')
+        console.log(clinicCode)
+        console.log('--------------m--------------')
+        await put(analyzedClinic(clinicCode.toString()))
+        console.log('--------------b--------------')
+        return await put(analyzedClinic(clinicCode.toString()))
+      })();
+    } 
+    */
+    if (response.catchHealth) {
+        const theSentence  = userMessage
+        const givenPromise = yield MessageSender.sendMessageToServer("test", theSentence)
+        console.log(givenPromise)
+        const clinicCode = JSON.parse((givenPromise).data['predict result'].replace(/'/g, '"'))['진료과 코드']
+        console.log(clinicCode)
+        yield put(analyzedClinic(clinicCode.toString()))
     }
 
     if (response.catchCompanyName) {
