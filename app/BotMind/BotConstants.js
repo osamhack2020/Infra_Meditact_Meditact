@@ -1,3 +1,3 @@
 export const name = 'Alpha'
-export const position = 'Virtual Assistant'
-export const company = 'Icalia Labs'
+export const position = 'Soldier'
+export const company  = 'Meditact'
