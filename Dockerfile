@@ -32,7 +32,8 @@ FROM runtime AS development
 RUN npm config set scripts-prepend-node-path true
 
 # Step 6: Install pip packages
-RUN pip3 install flask_cors
+# RUN apt install python3-pip; exit 0;
+# RUN pip3 install flask-core
 
 # Step 7: Copy the rest of the application code
 ADD . /code
