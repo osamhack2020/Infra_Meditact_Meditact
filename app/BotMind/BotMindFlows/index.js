@@ -15,7 +15,7 @@ const hangul_negative_negative = /^[가-힣]+/i;
 
 const questions                 = {
   start: {
-    botPrompt: '안녕하세요? 국군장병의 건강을 책임지는 AI로봇',
+    botPrompt: '안녕하세요? 국군장병의 건강을 책임지는 AI로봇 메디텍트입니다',
     answers  : [
       {
         nextId: 'myPurpose',
@@ -23,7 +23,7 @@ const questions                 = {
     ],
   },
   myPurpose: {
-    botPrompt: '메디텍트입니다.',
+    botPrompt: '메디텍트는 Medi와 tact의 합성어로, 항상 국군 장병 곁에서 도와주겠다는 뜻을 담고있습니다',
     answers  : [
       {
         nextId: 'yourName',

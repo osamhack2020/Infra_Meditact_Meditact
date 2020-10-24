@@ -1,8 +1,7 @@
 [![Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)](https://github.com/IcaliaLabs) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
 ![Alpha ChatBot](https://s3.amazonaws.com/icalialabs/alpha/alpha-01.png)
-### ***Craft your own (fully customizable) web-based chatbot***
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+### ***위 링크에 있는 ALpha ChatBot 을 커스터마이징 중입니다.***
 #### **Check out our [live demo](https://try-alpha.herokuapp.com)**
 #### **Real life implementation as [Icalia Labs](http://www.icalialabs.com) Virtual Sales Assisstant [here](http://quotient.icalialabs.com)**
 Alpha is a bot, or rather a base to craft your own web-based **chatbot**.
