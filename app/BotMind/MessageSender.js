@@ -1,4 +1,7 @@
-import axios from 'axios';
+const cors = require('cors');
+// swaped
+const axios = require ("axios");
+//import axios from 'axios';
 
 function getCSRFToken() {
   const metas = document.getElementsByTagName('meta');
@@ -12,17 +15,27 @@ function getCSRFToken() {
   return null;
 }
 
-
-export function sendMessageToServer(userName, digestedConversation ) {
-  var t = axios.post('http://127.0.0.1:5000',
-    {
-      conversation: digestedConversation,
-      headers     : {
+const headers = {
         "Access-Control-Allow-Origin"     : "*",
         "Access-Control-Allow-Credentials": "true",
+        "withCredentials" : "true",
         "Access-Control-Allow-Headers"    : "Origin, X-Requested-With, Content-Type, Accept",
-        "Access-Control-Allow-Methods"    : "PUT, GET, POST, DELETE, OPTION"
-      }
-    })
+        "Access-Control-Allow-Methods"    : "PUT, PATCH, GET, POST, DELETE, OPTION"
+}
+
+export function sendMessageToServer(userName, digestedConversation ) {
+  console.log("bef axios post in sendMessageToserver (and changed http for post)")
+  var t = axios.post(
+    'http://35.206.81.5:5000/',
+    {
+      conversation: digestedConversation
+    },
+    { headers: headers }
+  ).then(
+    token => {return token}
+  );
+
+  console.log(t)
+  console.log("after axios post in sendMessageToserver")
   return t
-  }
+}
