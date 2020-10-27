@@ -2,15 +2,15 @@ version: '2.4'
 
 services:
   release:
-    image: mindgitrwx/alpha:release
+    image: gcr.io/meditact-292808/alpha:release
     build:
       context: .
       target: release
     ports:
-      - 3000:3000
+      - 3001:3000
 
   alpha:
-    image: mindgitrwx/alpha:development
+    image: gcr.io/meditact-292808/alpha:development
     build:
       context: .
       target: development
@@ -21,4 +21,4 @@ services:
     volumes:
       - .:/code
     ports:
-      - 3000:3000
+      - 3001:3000
