@@ -123,9 +123,7 @@ export function* sendMessageFromUserNow(action) {
     if (response.catchHealth) {
         const theSentence  = userMessage
         const givenPromise = yield MessageSender.sendMessageToServer("test", theSentence)
-        console.log(givenPromise)
         const clinicCode = JSON.parse((givenPromise).data['predict result'].replace(/'/g, '"'))['진료과 코드']
-        console.log(clinicCode)
         yield put(analyzedClinic(clinicCode.toString()))
     }
 
