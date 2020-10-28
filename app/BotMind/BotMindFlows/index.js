@@ -112,7 +112,12 @@ const questions                 = {
       },
       {
         answer   : '건강상담',
-        nextId   : 'hmm',
+        nextId   : 'healthQuestion',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '병원안내',
+        nextId   : 'hospitalGuide',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
@@ -173,7 +178,7 @@ const questions                 = {
       },
     ],
   },
-  hmm: {
+  healthQuestion: {
     varName  : 'userName',
     botPrompt: '당신의 건강 상태는 지금 어떤가요? 🤔',
     answers  : [
@@ -182,6 +187,7 @@ const questions                 = {
       },
     ],
   },
+
   hmkay: {
     botPrompt: 'Hmkay... 😐',
     answers  : [
@@ -193,6 +199,16 @@ const questions                 = {
   question2: {
     botPrompt: '<a href="https://www.google.com">https://국군수도병원주소링크</a> 🐦',
     //input    : selectField(['African or European?', '10 m/s', "Don't ask me stupid questions."]),
+    answers  : [
+      {
+        nextId: 'select',
+      },
+    ],
+  },
+  
+  hospitalGuide: {
+    varName  : 'userName',
+    botPrompt: '<a href="https://afmd.mnd.go.kr/user/boardList.action?boardId=I_1785708&siteId=afmd&id=afmd_031000000000">국군수도병원 진료스케줄 링크</a> 🐦',
     answers  : [
       {
         nextId: 'select',
