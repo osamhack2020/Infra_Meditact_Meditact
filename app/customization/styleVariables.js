@@ -25,7 +25,7 @@ export const botAvatarIcon       = 'https://s3.amazonaws.com/mindgitrwx/alpha/bo
 // ---Bubbles/Dialogues/Badges Colors---//
 export const bubbleTextColorBot          = 'black';
 export const bubbleTextColorUser         = '#003785';
-export const bubbleBGBot                 = 'rgba(220, 42, 35, 0.1)';
+export const bubbleBGBot                 = 'rgba(82, 154, 255, 0.3)';
 export const bubbleBGUser                = 'rgba(82, 154, 255, 0.1)';
 export const selectReplyColor            = 'rgba(82, 154, 255, 0.3)';
 export const selectReplyColorOnHover     = userAvatar;
