@@ -101,7 +101,7 @@ const questions                 = {
   */
   //진료예약건강상담서비스병원안내의료진 정보서류영상발급MRI, CT 예약 현황기존
   select: {
-    botPrompt: '여기중에서 하나 선택하세요:',
+    botPrompt: '궁금한게 더 있으면 여기중에서 하나 선택하세요:',
     varName  : 'userName',
     input    : selectField(['진료예약','건강상담','병원안내','의료진','MRI예약현황', 'Meditact소개']),
     answers  : [
@@ -427,7 +427,7 @@ const questions                 = {
     ],
   },
   check_out1: {
-    botPrompt: '여러분과 함께 개발하며 진행해가는 Pre alpha version 의 챗봇입니다. 오픈소스에 참여해서 모두가 즐겁게 사용 가능한 국군을 위한 챗봇을 만들어 봐요!',
+    botPrompt: '여러분과 함께 개발하며 진행해가는 Pre alpha version 의 챗봇입니다. 방금 입력하신 코드에는 AI가 적용되어 다소 시간이 걸렸습니다. 오픈소스에 참여해서 모두가 즐겁게 사용 가능한 국군을 위한 챗봇을 만들어 봐요!',
     answers  : [
       {
         nextId: 'check_out2',
