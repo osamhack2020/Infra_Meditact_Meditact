@@ -103,7 +103,7 @@ const questions                 = {
   select: {
     botPrompt: '여기중에서 하나 선택하세요:',
     varName  : 'userName',
-    input    : selectField(['진료예약','건강상담','병원안내','의료진','MRI예약현황']),
+    input    : selectField(['진료예약','건강상담','병원안내','의료진','MRI예약현황', 'Meditact소개']),
     answers  : [
       {
         answer   : '진료예약',
@@ -125,8 +125,75 @@ const questions                 = {
         nextId   : 'cool',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
+      {
+        answer   : 'Meditact소개',
+        nextId   : 'MeditactInfo',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
     ],
   },
+  MeditactInfo: {
+    botPrompt: '<strong>Meditact</strong>는 현재 개발되어지고 있는 오픈소스 기반 chatbot platform 입니다. ',
+    answers  : [
+      {
+        nextId: 'selectMeditactInfo',
+      },
+    ],
+  },
+  selectMeditactInfo: {
+    botPrompt: '더 알고 싶은것이 있나요?',
+    varName  : 'userName',
+    input    : selectField(['서버정보','프론트정보','AI정보','팀구성']),
+    answers  : [
+      {
+        answer   : '서버정보',
+        nextId   : 'serverInfo',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '프론트정보',
+        nextId   : 'frontInfo',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : 'AI정보',
+        nextId   : 'aIInfo',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '팀구성',
+        nextId   : 'teamInfo',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+    ],
+  },
+
+  // add - for information of meditact
+  serverInfo: {
+    botPrompt: "쿠버네티스 기반의 Google cloud server에서 작동하고 있습니다. 24시간 무중단으로 돌아 갈 수 있도록 하겠습니다.",
+    answers  : [
+			{ nextId: 'select' },
+    ],
+  },
+  frontInfo: {
+    botPrompt: "React 기반으로 만들어져있습니다.",
+    answers  : [
+			{ nextId: 'select' },
+    ],
+  },
+  aIinfo: {
+    botPrompt: "현재 다양한 모델을 적용시킬 예정입니다. AI를 개선해주고 싶은 분이 있으면 여기에다 issue를 달아주세요. <a href='https://github.com/osamhack2020/Infra_Meditact_Meditact'>MeditactAI GIT 저장소</a>",
+    answers  : [
+			{ nextId: 'select' },
+    ],
+  },
+  teamInfo: {
+    botPrompt: "메디텍트는 다양한 출신의 국군 장병 5명이 씨앗을 뿌린 프로젝트입니다. 이제 여기에 기여를 해서 더 나은 챗봇이 되게 도와주세요",
+    answers  : [
+			{ nextId: 'select' },
+    ],
+  },
+
   tags: {
     botPrompt: 'Or even <strong>allow users to select many tags</strong> to form an answer:',
     varName  : 'userName',
