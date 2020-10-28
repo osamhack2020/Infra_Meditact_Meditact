@@ -2,7 +2,7 @@
 
 국군 의료 상담 AI챗봇 및 플랫폼 [**_Meditact_**](http://35.224.66.230/)
 
-![logo](./src/logo2.png)
+![logo](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/logo2.png)
 
 ---
 
@@ -79,7 +79,7 @@
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="/src/forReadme/main.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/forReadme/main.png" width="40%" height="40%"></a></div></td>
             <td width="33%"> 헤더 출력기능 </td>
         </tr>
         <tr>
@@ -92,7 +92,7 @@
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="/src/forReadme/reservation.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/forReadme/reservation.png" width="40%" height="40%"></a></div></td>
             <td width="33%"> 군의관 리스트 출력 </td>
         </tr>
         <tr>
@@ -108,7 +108,7 @@
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="/src/forReadme/reservation2.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/forReadme/reservation2.png" width="40%" height="40%"></a></div></td>
             <td width="33%"> 군의관 정보 출력</td>
         </tr>
         <tr>
