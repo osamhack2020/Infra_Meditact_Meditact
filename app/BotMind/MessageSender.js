@@ -1,7 +1,4 @@
-const cors = require('cors');
-// swaped
 const axios = require ("axios");
-//import axios from 'axios';
 
 function getCSRFToken() {
   const metas = document.getElementsByTagName('meta');
@@ -11,7 +8,6 @@ function getCSRFToken() {
       return meta.getAttribute('content');
     }
   }
-
   return null;
 }
 
@@ -34,7 +30,7 @@ export function sendMessageToServer(userName, digestedConversation ) {
   ).then(
     token => {return token}
   );
-
+  
   console.log(t)
   console.log("after axios post in sendMessageToserver")
   return t

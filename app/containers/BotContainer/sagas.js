@@ -5,6 +5,7 @@ import * as StateFormatter from '../../BotMind/StateFormatter';
 import * as RTypes from '../../BotMind/responseTypes';
 import * as BotMind from '../../BotMind/BotMind';
 import * as MessageSender from '../../BotMind/MessageSender';
+import * as clinicCodes from '../../BotMind/clinicCodes';
 import Finder from '../../BotMind/Interpreter';
 import {
   turnOnBotThinking,
@@ -123,8 +124,12 @@ export function* sendMessageFromUserNow(action) {
     if (response.catchHealth) {
         const theSentence  = userMessage
         const givenPromise = yield MessageSender.sendMessageToServer("test", theSentence)
-        const clinicCode = JSON.parse((givenPromise).data['predict result'].replace(/'/g, '"'))['진료과 코드']
-        yield put(analyzedClinic(clinicCode.toString()))
+        var clinicCode = ""
+        clinicCode = JSON.parse((givenPromise).data['predict result'].replace(/'/g, '"'))['진료과 코드']
+        console.log(clinicCode)
+        console.log(typeof(clinicCode))
+        //clinicCode = JSON.parse((givenPromise).data['predict result'])
+        yield put(analyzedClinic(clinicCode))
     }
 
     if (response.catchCompanyName) {
