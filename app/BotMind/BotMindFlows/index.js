@@ -214,6 +214,7 @@ const questions                 = {
         nextId: 'select',
       },
     ],
+    sumToBags: [{ name: 'rickAndMorty', points: 1 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
   },
   healthCheck: {
     botPrompt: '<strong>@varName</strong> 장병님. 건강 상태를 구체적으로 물어주세요 (예: 머리가 자주 아파요)',
