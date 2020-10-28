@@ -63,7 +63,7 @@
 <table>
 	<tbody>
 		<tr>
-            <td rowspan="6"><div align="center"><img src="/src/demo.gif" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/demo.gif" width="40%" height="40%"></a></div></td>
             <td width="33%">NLP를 이용 한 진료과 분류</td>
         </tr>
         <tr>
