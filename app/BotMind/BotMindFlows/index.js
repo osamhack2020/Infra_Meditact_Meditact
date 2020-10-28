@@ -184,13 +184,19 @@ const questions                 = {
   aIinfo: {
     botPrompt: "현재 다양한 모델을 적용시킬 예정입니다. AI를 개선해주고 싶은 분이 있으면 여기에다 issue를 달아주세요.",
     answers  : [
-			{ nextId: 'aIinfoLink' },
+			{ nextId: 'aIinfoScale' },
     ],
   },
   teamInfo: {
     botPrompt: "메디텍트는 다양한 출신의 국군 장병 5명이 씨앗을 뿌린 프로젝트입니다. 이제 여기에 기여를 해서 더 나은 챗봇이 되게 도와주세요",
     answers  : [
 			{ nextId: 'select' },
+    ],
+  },
+  aIinfoScale: {
+    botPrompt: "의학 분야 전문 지식을 가진 군의관님이 11만 8008개의 데이터를 크롤링하고 라벨링해서 만들어졌어요!",
+    answers  : [
+			{ nextId: 'aIinfoLink' },
     ],
   },
   aIinfoLink: {
