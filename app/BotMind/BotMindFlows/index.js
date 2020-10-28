@@ -15,7 +15,7 @@ const hangul_negative_negative = /^[가-힣]+/i;
 
 const questions                 = {
   start: {
-    botPrompt: '안녕하세요? 국군장병의 건강을 책임지는 AI로봇 메디텍트입니다',
+    botPrompt: '안녕하세요? 국군장병의 건강을 책임지는 AI로봇 <strong>메디텍트</strong> 입니다',
     answers  : [
       {
         nextId: 'myPurpose',
