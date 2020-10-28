@@ -4,7 +4,7 @@ export const background = 'url("http://s3.amazonaws.com/mindgitrwx/assets/img/bg
 // =================================COLORS=================================
 
 // --- Char General Colors ---//
-export const primaryColor    = '#0000ff';
+export const primaryColor    = '#00ff00';
 export const onlineColor     = '#7ed321';
 export const offlineColor    = '#e5e5e5';
 export const textColor       = '#5d6975';
