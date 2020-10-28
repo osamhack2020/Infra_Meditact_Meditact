@@ -182,15 +182,24 @@ const questions                 = {
     ],
   },
   aIinfo: {
-    botPrompt: "현재 다양한 모델을 적용시킬 예정입니다. AI를 개선해주고 싶은 분이 있으면 여기에다 issue를 달아주세요. <a href='https://github.com/osamhack2020/Infra_Meditact_Meditact'>MeditactAI GIT 저장소</a>",
+    botPrompt: "현재 다양한 모델을 적용시킬 예정입니다. AI를 개선해주고 싶은 분이 있으면 여기에다 issue를 달아주세요.",
     answers  : [
-			{ nextId: 'select' },
+			{ nextId: 'aIinfoLink' },
     ],
   },
   teamInfo: {
     botPrompt: "메디텍트는 다양한 출신의 국군 장병 5명이 씨앗을 뿌린 프로젝트입니다. 이제 여기에 기여를 해서 더 나은 챗봇이 되게 도와주세요",
     answers  : [
 			{ nextId: 'select' },
+    ],
+  },
+  aIinfoLink: {
+    botPrompt: '<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact">MeditactAI개발repo</a> 🐦',
+    //input    : selectField(['African or European?', '10 m/s', "Don't ask me stupid questions."]),
+    answers  : [
+      {
+        nextId: 'select',
+      },
     ],
   },
 
