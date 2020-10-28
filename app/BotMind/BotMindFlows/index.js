@@ -335,7 +335,7 @@ const questions                 = {
     ],
   },
   sorry: {
-    botPrompt         : 'https://media.giphy.com/media/l3Ucl5pIqSaGa82T6/giphy.gif',
+    botPrompt         : 'https://image.freepik.com/free-vector/employees-giving-hands-helping-colleagues-walk-upstairs_74855-5236.jpg',
     type              : RTypes.MEDIA,
     finishConversation: true,
     answers           : [
@@ -345,7 +345,7 @@ const questions                 = {
     ],
   },
   check_out1: {
-    botPrompt: 'Check out how to build your own, fully customizable, web-based bot in here',
+    botPrompt: '여러분과 함께 개발하며 진행해가는 Pre alpha version 의 챗봇입니다. 오픈소스에 참여해서 모두가 즐겁게 사용 가능한 국군을 위한 챗봇을 만들어 봐요!',
     answers  : [
       {
         nextId: 'check_out2',
@@ -358,7 +358,7 @@ const questions                 = {
     input    : endOfConversation(),
     answers  : [
       {
-        nextId: 'check_out2',
+        nextId: 'select',
       },
     ],
   },
