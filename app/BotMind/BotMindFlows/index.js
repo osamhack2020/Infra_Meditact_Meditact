@@ -248,7 +248,7 @@ const questions                 = {
     ],
   },
   rickAndMorty3: {
-    botPrompt         : 'https://media.giphy.com/media/l41lI4bYmcsPJX9Go/giphy.gif',
+    botPrompt         : 'https://image.freepik.com/free-vector/diverse-crowd-people-different-ages-races_74855-5235.jpg',
     finishConversation: true,
     type              : RTypes.MEDIA,
     answers           : [
@@ -355,7 +355,7 @@ const questions                 = {
   check_out2: {
     botPrompt: 'https://github.com/mindgitrwx/alpha',
     type     : RTypes.LINK,
-    input    : endOfConversation(),
+    //input    : endOfConversation(),
     answers  : [
       {
         nextId: 'select',
