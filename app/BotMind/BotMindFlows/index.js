@@ -315,8 +315,8 @@ const questions                 = {
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
-        answer   : '프론트정보',
-        nextId   : 'frontInfo',
+        answer   : '주소',
+        nextId   : 'clinicAddress',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
@@ -325,15 +325,31 @@ const questions                 = {
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
-        answer   : '팀구성',
-        nextId   : 'teamInfo',
+        answer   : '편의시설',
+        nextId   : 'clinicBuilding',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
     ],
   },
 
-  hmkay: {
-    botPrompt: 'Hmkay... 😐',
+  clinicTime: {
+    botPrompt: '평일 : 09:00~12:15, 13:30~17:30, 접수시간 : 08:30~12:15, 13:30~16:30 입니다!',
+    answers  : [
+      {
+        nextId: 'select',
+      },
+    ],
+  },
+  clinicAddress: {
+    botPrompt: '경기도 성남시 분당구 새마을로 177번길 81번지 사서함 99호',
+    answers  : [
+      {
+        nextId: 'select',
+      },
+    ],
+  },
+  clinicBuilding: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
     answers  : [
       {
         nextId: 'select',
