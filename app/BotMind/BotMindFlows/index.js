@@ -181,7 +181,7 @@ const questions                 = {
     ],
   },
   frontInfo: {
-    botPrompt: "React 기반으로 만들어져있습니다.",
+    botPrompt: "React 기반으로 만들어져있습니다. 군의관과 직접 상담할 수 있는 사이트를 구축하고 있습니다.",
     answers  : [
 			{ nextId: 'select' },
     ],
@@ -261,7 +261,7 @@ const questions                 = {
     botPrompt: '링크를 클릭하세요 😎',
     answers  : [
       {
-        nextId: 'question2',
+        nextId: 'clinicLink',
       },
     ],
   },
@@ -279,11 +279,11 @@ const questions                 = {
     botPrompt: 'Hmkay... 😐',
     answers  : [
       {
-        nextId: 'question2',
+        nextId: 'clinicLink',
       },
     ],
   },
-  question2: {
+  clinicLink: {
     botPrompt: '<a href="https://afmd.mnd.go.kr/mbshome/mbs/afmd/">https://국군수도병원주소링크</a> 🐦',
     //input    : selectField(['African or European?', '10 m/s', "Don't ask me stupid questions."]),
     answers  : [
@@ -305,6 +305,43 @@ const questions                 = {
   }, 
 
   hospitalGuide: {
+    botPrompt: '병원에 대해 어떤 정보을 알고 싶나요?',
+    varName  : 'userName',
+    input    : selectField(['진료스케줄','프론트정보','외래진료시간','팀구성']),
+    answers  : [
+      {
+        answer   : '진료스케줄',
+        nextId   : 'clinicSchedule',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '프론트정보',
+        nextId   : 'frontInfo',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '외래진료시간',
+        nextId   : 'clinicTime',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '팀구성',
+        nextId   : 'teamInfo',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+    ],
+  },
+
+  hmkay: {
+    botPrompt: 'Hmkay... 😐',
+    answers  : [
+      {
+        nextId: 'select',
+      },
+    ],
+  },
+
+  clinicSchedule: {
     varName  : 'userName',
     botPrompt: '<a href="https://afmd.mnd.go.kr/user/boardList.action?boardId=I_1785708&siteId=afmd&id=afmd_031000000000">국군수도병원 진료스케줄 링크</a> 🐦',
     answers  : [
@@ -314,6 +351,7 @@ const questions                 = {
     ],
     sumToBags: [{ name: 'rickAndMorty', points: 1 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
   },
+
   healthCheck: {
     botPrompt: '<strong>@varName</strong> 장병님. 건강 상태를 구체적으로 물어주세요 (예: 머리가 자주 아파요)',
     input    : textField(),
