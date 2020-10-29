@@ -116,6 +116,11 @@ const questions                 = {
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
+        answer   : '의료진',
+        nextId   : 'doctors',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
         answer   : '병원안내',
         nextId   : 'hospitalGuide',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
@@ -279,7 +284,7 @@ const questions                 = {
     ],
   },
   question2: {
-    botPrompt: '<a href="https://www.google.com">https://국군수도병원주소링크</a> 🐦',
+    botPrompt: '<a href="https://afmd.mnd.go.kr/mbshome/mbs/afmd/">https://국군수도병원주소링크</a> 🐦',
     //input    : selectField(['African or European?', '10 m/s', "Don't ask me stupid questions."]),
     answers  : [
       {
@@ -287,7 +292,18 @@ const questions                 = {
       },
     ],
   },
-  
+
+  doctors: {
+    varName  : 'userName',
+    botPrompt: '<a href="https://afmd.mnd.go.kr/mbshome/mbs/afmd/subview.jsp?id=afmd_020400000000">의료진검색</a> 🐦',
+    answers  : [
+      {
+        nextId: 'select',
+      },
+    ],
+    sumToBags: [{ name: 'rickAndMorty', points: 1 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+  }, 
+
   hospitalGuide: {
     varName  : 'userName',
     botPrompt: '<a href="https://afmd.mnd.go.kr/user/boardList.action?boardId=I_1785708&siteId=afmd&id=afmd_031000000000">국군수도병원 진료스케줄 링크</a> 🐦',
@@ -325,11 +341,11 @@ const questions                 = {
     varName  : 'clinic',
     answers  : [
       {
-        nextId: 'rickAndMorty3',
+        nextId: 'diversePeople',
       },
     ],
   },
-  rickAndMorty3: {
+  diversePeople: {
     botPrompt         : 'https://image.freepik.com/free-vector/diverse-crowd-people-different-ages-races_74855-5235.jpg',
     finishConversation: true,
     type              : RTypes.MEDIA,
