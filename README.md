@@ -135,6 +135,17 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
 2. [POST API](./server/APIdocs/PostAPI.md) ( 상담 글쓰기 관련 API )
 3. [APPT API](./server/APIdocs/ApptAPI.md) ( 예약관련 API )
 
+### Infra Structure
+
+Google Cloud Platform 을 기반으로 채팅 앱을 컨테이너화 했습니다.
+
+도커로 만들어진 컨테이너는 쿠버네티스가 컨트롤 합니다.
+
+쿠버네티스는 24시간동안 무중단으로 챗봇이 작동하는 것을 돕습니다.
+
+[![meditact-Infra.png](https://i.postimg.cc/yYYk4kGs/meditact-Infra.png)](https://postimg.cc/xqh0LTY4)
+
+
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 
 - ECMAScript 6 지원 브라우저 사용
