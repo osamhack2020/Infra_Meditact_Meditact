@@ -369,7 +369,7 @@ const questions                 = {
   clinicBuilding: {
     botPrompt: '더 알고 싶은것이 있나요?',
     varName  : 'userName',
-    input    : selectField(['환자식당', '직원식당', '충성마트', '피자나라치킨공주', '환자이발소', '미용실', '도서관', '야외쉼터', '자동현금인출기', '뒤로가기']),
+    input    : selectField(['환자식당', '직원식당', '충성마트', '피자나라치킨공주', '환자이발소', '미용실', '도서관', '야외쉼터', 'ATM', '뒤로가기']),
     answers  : [
       {
         answer   : '환자식당',
@@ -413,7 +413,7 @@ const questions                 = {
       },
       {
         answer   : '자동현금입출금기',
-        nextId   : 'money',
+        nextId   : 'ATM',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
