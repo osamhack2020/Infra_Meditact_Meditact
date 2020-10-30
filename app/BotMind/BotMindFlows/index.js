@@ -543,6 +543,25 @@ const questions                 = {
     varName  : 'clinic',
     answers  : [
       {
+        nextId: 'clinicAnswer2',
+      },
+    ],
+  },
+  clinicAnswer2: {
+    botPrompt: "<strong>@varName</strong>군의관님에게 직접 건강 상담을 받아보세요!",
+    type     : RTypes.TRANSFORMED_TEXT,
+    varName  : 'clinic',
+    answers  : [
+      {
+        nextId: 'clinicAnswer3',
+      },
+    ],
+  },
+  clinicAnswer3: {
+    botPrompt: 'https://kshired.com/',
+    type     : RTypes.LINK,
+    answers  : [
+      {
         nextId: 'diversePeople',
       },
     ],
