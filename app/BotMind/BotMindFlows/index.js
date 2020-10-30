@@ -116,7 +116,7 @@ const questions                 = {
     answers  : [
       {
         answer   : '진료예약',
-        nextId   : 'cool',
+        nextId   : 'preClinicLink',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
@@ -136,7 +136,7 @@ const questions                 = {
       },
       {
         answer   : 'MRI예약현황',
-        nextId   : 'cool',
+        nextId   : 'preClinicLink',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
@@ -207,7 +207,7 @@ const questions                 = {
     ],
   },
   infraInfo: {
-    botPrompt: "",
+    botPrompt: "https://i.postimg.cc/FRDGb4hy/meditact-Infra.png",
     type     : RTypes.MEDIA,
     answers  : [
 			{ nextId: 'select' },
@@ -243,42 +243,8 @@ const questions                 = {
 			{ nextId: 'bagsSystem' },
     ],
   },
-  bagsSystem: {
-    botPrompt: "Besides all that, I can add up points in my <strong>Bags System</strong>, to eventually make a 'Recommendation'",
-    answers  : [
-			{ nextId: 'letsTryIt' },
-    ],
-  },
-  letsTryIt: {
-    botPrompt: "Let's try it!",
-    answers  : [
-			{ nextId: 'question1' },
-    ],
-  },
-  question1: {
-    botPrompt: 'Tell me <strong>@varName</strong>: Do you like to have fun?',
-    type     : RTypes.TRANSFORMED_TEXT,
-    varName  : 'userName',
-    input    : selectField(['Yes!', 'No.', "I'm not Sure"]),
-    answers  : [
-      {
-        answer   : 'Yes!',
-        nextId   : 'cool',
-        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
-      },
-      {
-        answer   : 'No.',
-        nextId   : 'hmkay',
-        sumToBags: [{ name: 'shroedingersCat', points: 1 }, { name: 'recursion', points: 3 }],
-      },
-      {
-        answer   : "I'm not Sure",
-        nextId   : 'hmm',
-        sumToBags: [{ name: 'rickAndMorty', points: 1 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
-      },
-    ],
-  },
-  cool: {
+
+  preClinicLink: {
     botPrompt: '링크를 클릭하세요 😎',
     answers  : [
       {
