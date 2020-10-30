@@ -112,11 +112,15 @@ const questions                 = {
   select: {
     botPrompt: '궁금한게 더 있으면 여기중에서 하나 선택하세요:',
     varName  : 'userName',
-    input    : selectField(['진료예약','건강상담','병원안내','의료진','MRI예약현황', 'Meditact소개']),
+    input    : selectField(['건강상담','진료예약','병원안내','의료진','Home', 'Meditact소개']),
     answers  : [
-
       {
         answer   : '건강상담',
+        nextId   : 'healthQuestion',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '진료예약',
         nextId   : 'healthQuestion',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
@@ -248,14 +252,7 @@ const questions                 = {
       },
     ],
   },
-  preHomepageLink: {
-    botPrompt: '메디텍트는 기존의 국군수도병원 홈페이지를 사용자 친화적으로 만들고자 노력하고 있습니다.',
-    answers  : [
-      {
-        nextId: 'preHomepageLink2',
-      },
-    ],
-  },
+
   preHomepageLink2: {
     botPrompt: '새롭게 단장 중인 홈페이지를 탐험해보시겠어요?',
     answers  : [
@@ -507,20 +504,6 @@ const questions                 = {
       },
     ],
   },
-
-
-  clinicBuilding: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-
-
 
   clinicSchedule: {
     varName  : 'userName',
