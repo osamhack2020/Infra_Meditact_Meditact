@@ -89,7 +89,7 @@
 
 - **semantic ui**에서 제공하는 템플릿을 기초로 하였기 때문에 목업이나 프로토타입을 만들 필요가 없었습니다.
 
-- Grid 레이아웃을 적용하여 페이지 레이아웃을 구성하기로 하였습니다. [Grid](https://semantic-ui.com/examples/grid.html 'what is grid?')
+- [Grid](https://semantic-ui.com/examples/grid.html 'what is grid?') 레이아웃을 적용하여 페이지 레이아웃을 구성하기로 하였습니다. 
 
 #### 페이지 구성
 
