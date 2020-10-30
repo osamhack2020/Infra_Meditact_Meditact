@@ -1,4 +1,4 @@
-## Meditact
+# Meditact
 
 국군 장병을 위한 AI 기반 비대면 의료 서비스 [**_Meditact_**](http://35.224.66.230/)
 
@@ -38,7 +38,7 @@
 
 <img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/konlp.png" width="250"/>
 
-- python의 **re**와 **konlp** 패키지를 이용하여 형태소를 분석하여 명사를 추출하여 데이터를 전처리하였습니다.
+- python의 **re**와 **konlpy** 패키지를 이용하여 형태소를 분석하여 명사를 추출하여 데이터를 전처리하였습니다.
 
 
 #### 탐색적 데이터 분석
