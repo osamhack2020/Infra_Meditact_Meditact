@@ -393,12 +393,12 @@ const questions                 = {
       },
       {
         answer   : '환자이발소',
-        nextId   : 'select',
+        nextId   : 'pHair',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
         answer   : '미용실',
-        nextId   : 'select',
+        nextId   : 'hair',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
