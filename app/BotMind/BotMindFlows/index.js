@@ -271,7 +271,7 @@ const questions                 = {
     ],
   },
   clinicLink: {
-    botPrompt: '<a href="https://afmd.mnd.go.kr/mbshome/mbs/afmd/">https://국군수도병원주소링크</a> 🐦',
+    botPrompt: '<a href="">https://국군수도병원주소링크</a> 🐦',
     //input    : selectField(['African or European?', '10 m/s', "Don't ask me stupid questions."]),
     answers  : [
       {
@@ -294,7 +294,7 @@ const questions                 = {
   hospitalGuide: {
     botPrompt: '병원에 대해 어떤 정보을 알고 싶나요?',
     varName  : 'userName',
-    input    : selectField(['진료스케줄','주소','외래진료시간','편의시설']),
+    input    : selectField(['진료스케줄','주소','외래진료시간','편의시설', '뒤로가기']),
     answers  : [
       {
         answer   : '진료스케줄',
@@ -316,6 +316,11 @@ const questions                 = {
         nextId   : 'clinicBuilding',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
+      {
+        answer   : '뒤로가기',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
     ],
   },
 
@@ -323,7 +328,7 @@ const questions                 = {
     botPrompt: '평일 : 09:00~12:15, 13:30~17:30, 접수시간 : 08:30~12:15, 13:30~16:30 입니다!',
     answers  : [
       {
-        nextId: 'select',
+        nextId: 'hospitalGuide',
       },
     ],
   },
@@ -331,7 +336,7 @@ const questions                 = {
     botPrompt: '경기도 성남시 분당구 새마을로 177번길 81번지 사서함 99호',
     answers  : [
       {
-        nextId: 'select',
+        nextId: 'hospitalGuide',
       },
     ],
   },
@@ -339,7 +344,7 @@ const questions                 = {
     botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
     answers  : [
       {
-        nextId: 'select',
+        nextId: 'hospitalGuide',
       },
     ],
   },
@@ -349,7 +354,7 @@ const questions                 = {
     botPrompt: '<a href="https://afmd.mnd.go.kr/user/boardList.action?boardId=I_1785708&siteId=afmd&id=afmd_031000000000">국군수도병원 진료스케줄 링크</a> 🐦',
     answers  : [
       {
-        nextId: 'select',
+        nextId: 'hospitalGuide',
       },
     ],
     sumToBags: [{ name: 'rickAndMorty', points: 1 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
