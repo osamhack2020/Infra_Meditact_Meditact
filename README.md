@@ -77,9 +77,9 @@
 
 #### 디자인 구성
 
-| semantic ui                                                                                                                                                                                            |                                                                    styled-component                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------: |
-| !["semantic img"](https://miro.medium.com/max/450/1*2RMwBa_m2kSculsGYB48uQ.png)                                                                                                                        |                             !["styled img"](https://blog.kakaocdn.net/dn/AMVCv/btqGbqFAeG4/VL93Ekz0y1iyALV25fAcS1/img.png)                             |
+| semantic ui |  styled-component|
+|:----------:| :--------: |
+| <img src="https://miro.medium.com/max/450/1*2RMwBa_m2kSculsGYB48uQ.png" width="150"/>| <img src="https://blog.kakaocdn.net/dn/AMVCv/btqGbqFAeG4/VL93Ekz0y1iyALV25fAcS1/img.png" width="150"/> |
 | 많은 템플릿과 객체(ex : button, table 등)을 제공해주고, 이들을 커스터마이징하기 쉽게 구현되어 있습니다. 또한 모든 객체들은 반응형으로 구성되어 반응형웹을 제작하기에도 편리하기 때문에 선택하였습니다. | 인라인 스타일을 적용하면 코드의 가독성이 떨어지고 스타일을 변경하는데도 어려움이 있습니다. styled-component는 스타일 객체를 한 데 모아 관리하기 때문에 앞에 설명한 문제점들을 해결해 줄 수 있다고 생각하여 선택하였습니다. |
 
 #### 디자인 구성 방향
