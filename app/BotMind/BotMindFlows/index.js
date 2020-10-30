@@ -23,7 +23,7 @@ const questions                 = {
     ],
   },
   myPurpose: {
-    botPrompt: '메디텍트는 Medi와 tact의 합성어로, 항상 국군 장병 곁에서 도와주겠다는 뜻을 담고있습니다',
+    botPrompt: '메디텍트는 <strong>Medicine</strong>과 <strong>Untact</strong>의 합성어로, 항상 국군 장병 곁에서 도와주겠다는 뜻을 담고있습니다',
     answers  : [
       {
         nextId: 'yourName',
@@ -307,7 +307,7 @@ const questions                 = {
   hospitalGuide: {
     botPrompt: '병원에 대해 어떤 정보을 알고 싶나요?',
     varName  : 'userName',
-    input    : selectField(['진료스케줄','프론트정보','외래진료시간','팀구성']),
+    input    : selectField(['진료스케줄','주소','외래진료시간','편의시설']),
     answers  : [
       {
         answer   : '진료스케줄',
