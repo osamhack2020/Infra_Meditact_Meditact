@@ -18,6 +18,15 @@ const questions                 = {
     botPrompt: '안녕하세요? 국군장병의 건강을 책임지는 AI로봇 <strong>메디텍트</strong> 입니다',
     answers  : [
       {
+        nextId: 'MeditactLogo',
+      },
+    ],
+  },
+  MeditactLogo: {
+    botPrompt: 'https://i.postimg.cc/xTZBmKds/meditact.png',
+    type     : RTypes.MEDIA,
+    answers  : [
+      {
         nextId: 'myPurpose',
       },
     ],
