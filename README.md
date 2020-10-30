@@ -65,7 +65,7 @@
 |모델명|LSTM|FastText|BERT|
 |분류 정확도|73.52%|37.44%|76.29%|
 
-- **오픈소스 해커톤**의 취지에 맞게 각 모델의 생성과정을 **누구나** 따라 할 수 있게 [Github](https://github.com)에 JupyterNotebook(.ipynb) 파일을 제공하였습니다.
+- **오픈소스 해커톤**의 취지에 맞게, 각 모델의 생성과정을 **누구나** 따라 할 수 있도록 [Github](https://github.com)에 JupyterNotebook(.ipynb) 파일을 제공하였습니다.
 
 #### 최종 배포용 모델 선정
 
@@ -75,7 +75,7 @@
 
 ### Web Front-end
 
-#### 디자인 구성
+#### 디자인에 사용한 패키지와 이유
 
 | semantic ui |  styled-component|
 |:----------:| :--------: |
@@ -97,7 +97,6 @@
   - 챗봇 페이지의 프론트는 오픈소스 프로젝트 [Alpha](https://github.com/IcaliaLabs/alpha)를 활용하였습니다. 코드가 직관적이고 커스터마이징이 편하다는 장점이 있었습니다.
 
 - **예약하기 페이지**
-
   - 핵심 기능 중 하나이기 때문에 해당 페이지로 접근할 수 있는 방법을 "헤더에 위치한 카테고리", "메인 배너 위 버튼" 이 두 가지로 제시 하였습니다.
   - 군의관들의 정보를 카드형태로 출력하였습니다. 해당 카드를 클릭하면 선택된 군의관의 자세한 정보가 기존 페이지에서 출력될 수 있도록 구성하였습니다.
      불필요한 리디렉션을 방지하고 디자인적으로도 깔끔해 보인다고 생각합니다.
@@ -105,12 +104,17 @@
      출력됩니다. (검색을 적용하지 않은 이유는 유저(환자)들이 군의관의 이름을 외우는 경우는 드물다고 생각하였고, 때문에 있으나 마나한 기능이 될 수 있다고 생각했기 때문입니다.)
   
 - **공지사항 페이지**
-
   - 메인 페이지에서 출력하도록 구성하였습니다. 굳이 다른 경로를 이용하여 공지사항을 출력해주는 것 보다 시간적으로 더 효율적이라고 생각했기 때문입니다.
 
 - **병원정보 페이지**
-  - "병원정보"는 국군수도병원의 정보를 바탕으로 하였습니다. 저희 페이지에서 출력 가능한 부분은 직접 구현하였고, 그렇지 못한 페이지는 국군수도병원 페이지로 리디렉션이 되도록 구현하였습니다.
+  - **병원정보**는 국군수도병원의 정보를 바탕으로 하였습니다. 저희 페이지에서 출력 가능한 부분은 직접 구현하였고, 그렇지 못한 페이지는 국군수도병원 페이지로 리디렉션이 되도록 구현하였습니다.
   - 네비게이션을 구현하여 원하는 정보(병원 가는 길, 시설안내 등)를 클릭하면 그에 맞는 정보가 페이지에서 출력됩니다.
+  
+- **건강관리 페이지**
+    - 자신이 속한 부대와 본인의 기본 개인정보가 포함되어 있습니다. 
+    - *상담하기* 기능이 포함되어 있습니다.
+        - 자신이 상담하기 희망하는 군의관을 선택할 수 있습니다.
+        - 제목과 본문을 나누어 제목을 통해 어드민(or 군의관)이 본문을 유추할 수 있게끔 구성하였습니다.
 
 #### 각 페이지별 구성 기능
 
@@ -119,8 +123,11 @@
 	<tbody>
 		<tr>
             <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/demo.gif" width="40%" height="40%"></a></div></td>
-            <td width="33%">NLP를 이용 한 진료과 분류</td>
+            <td width="33%">NLP를 이용한 진료과 분류</td>
         </tr>
+	<tr>
+	    <td>버튼기반의 편리한 UI/UX 제공</td>
+	</tr>
         <tr>
             <td>병원 예약 기능</td>
         </tr>
@@ -130,11 +137,11 @@
     </tbody>
 </table>
 
-- 메인 페이지<br>
+- 메인 페이지 <br>
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/forReadme/main.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/main.png" width="40%" height="40%"></a></div></td>
             <td width="33%"> 헤더 출력기능 </td>
         </tr>
         <tr>
@@ -143,11 +150,11 @@
     </tbody>
 </table>
 
-- 예약 페이지<br>
+- 예약 페이지(User) <br>
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/forReadme/reservation.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/reservation(user).png" width="40%" height="40%"></a></div></td>
             <td width="33%"> 군의관 리스트 출력 </td>
         </tr>
         <tr>
@@ -159,11 +166,11 @@
     </tbody>
 </table>
 
-- 예약 페이지 _예약하기 클릭 시_<br>
+- 예약 페이지 (User) *예약하기 클릭 시* <br>
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/forReadme/reservation2.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/reservation2.png" width="40%" height="40%"></a></div></td>
             <td width="33%"> 군의관 정보 출력</td>
         </tr>
         <tr>
@@ -175,15 +182,68 @@
     </tbody>
 </table>
 
+- 예약 페이지(Admin) <br>
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/reservation(admin).png" width="40%" height="40%"></a></div></td>
+            <td width="33%"> 예약현황 출력 </td>
+        </tr>
+        <tr>
+            <td>예약 승인 / 거부 기능</td>
+        </tr>
+    </tbody>
+</table>
+
+- 예약 페이지(Medic) <br>
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/reservation(medic).png" width="40%" height="40%"></a></div></td>
+            <td width="33%"> 승인된 예약 현황 </td>
+        </tr>
+        <tr>
+            <td>등록된 상담 확인 기능</td>
+        </tr>
+    </tbody>
+</table>
+
+- 건강관리 페이지 <br>
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/my_consult.png" width="40%" height="40%"></a></div></td>
+            <td width="33%">사용자의 소속 부대 정보 출력</td>
+        </tr>
+        <tr>
+            <td>사용자의 기본 정보 출력</td>
+        </tr>
+        <tr>
+            <td>상담 게시판 사용 기능</td>
+        </tr>
+    </tbody>
+</table>
+
+- 정보 페이지 <br>
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/information.png" width="40%" height="40%"></a></div></td>
+            <td width="33%">기제된 정보가 출력된 국군수도병원 페이지로 리디렉션</td>
+        </tr>
+    </tbody>
+</table>
+
+
 ### Web Back-end
 
 3가지 주요 기능별로 API의 End Point를 구별하였습니다.
 
 User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며, 그에 따른 API 명세는 다음과 같습니다.
 
-1. [USER API](./server/APIdocs/UserAPI.md) ( 유저 정보 관련 API )
-2. [POST API](./server/APIdocs/PostAPI.md) ( 상담 글쓰기 관련 API )
-3. [APPT API](./server/APIdocs/ApptAPI.md) ( 예약관련 API )
+- [USER API](./server/APIdocs/UserAPI.md) ( 유저 정보 관련 API )
+- [POST API](./server/APIdocs/PostAPI.md) ( 상담 글쓰기 관련 API )
+- [APPT API](./server/APIdocs/ApptAPI.md) ( 예약관련 API )
 
 ### Infra Structure
 
@@ -203,7 +263,9 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
 
 - ECMAScript 6 지원 브라우저 사용
 
-- 권장: Google Chrome 버젼 77 이상
+- 브라우저 지원 버젼
+
+!["browser img"](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/browser.png)
 
 ## 기술 스택 (Technique Used)
 
