@@ -373,22 +373,22 @@ const questions                 = {
     answers  : [
       {
         answer   : '환자식당',
-        nextId   : 'select',
+        nextId   : 'pEat',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
         answer   : '직원식당',
-        nextId   : 'select',
+        nextId   : 'eat',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
         answer   : '충성마트',
-        nextId   : 'select',
+        nextId   : 'px',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
         answer   : '피자나라치킨공주',
-        nextId   : 'select',
+        nextId   : 'pizza',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
@@ -403,16 +403,16 @@ const questions                 = {
       },
       {
         answer   : '도서관',
-        nextId   : 'select',
+        nextId   : 'library',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
         answer   : '야외쉼터',
-        nextId   : 'select',
+        nextId   : 'park',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
-        answer   : '미용실',
+        answer   : '처음으로',
         nextId   : 'select',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
@@ -420,7 +420,8 @@ const questions                 = {
   },
 
   pEat: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: 'https://i.postimg.cc/9fWdTDwN/peat.png',
+    type     : RTypes.MEDIA,
     answers  : [
       {
         nextId: 'clinicBuilding',
@@ -429,7 +430,8 @@ const questions                 = {
   },
 
   eat: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: 'https://i.postimg.cc/B6nCWjq1/eat.png',
+    type     : RTypes.MEDIA,
     answers  : [
       {
         nextId: 'clinicBuilding',
@@ -438,7 +440,8 @@ const questions                 = {
   },
 
   px: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: 'https://i.postimg.cc/NMFRJZ46/px.png',
+    type     : RTypes.MEDIA,
     answers  : [
       {
         nextId: 'clinicBuilding',
@@ -447,7 +450,8 @@ const questions                 = {
   },
 
   pizza: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: 'https://i.postimg.cc/vm3WvGW8/pizza.png',
+    type     : RTypes.MEDIA,
     answers  : [
       {
         nextId: 'clinicBuilding',
@@ -457,7 +461,8 @@ const questions                 = {
 
 
   pHair: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: 'https://i.postimg.cc/pTcJPPTc/hair.png',
+    type     : RTypes.MEDIA,
     answers  : [
       {
         nextId: 'clinicBuilding',
@@ -467,7 +472,8 @@ const questions                 = {
 
 
   hair: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: 'https://i.postimg.cc/1XgctbVm/haircut.png',
+    type     : RTypes.MEDIA,
     answers  : [
       {
         nextId: 'clinicBuilding',
@@ -477,7 +483,8 @@ const questions                 = {
 
 
   library: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: 'https://i.postimg.cc/8k3m3kxj/library.png',
+    type     : RTypes.MEDIA,
     answers  : [
       {
         nextId: 'clinicBuilding',
@@ -487,7 +494,8 @@ const questions                 = {
 
 
   park: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: 'https://i.postimg.cc/Sxb7STS4/park.png',
+    type     : RTypes.MEDIA,
     answers  : [
       {
         nextId: 'clinicBuilding',
@@ -497,7 +505,8 @@ const questions                 = {
 
 
   money: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: 'https://i.postimg.cc/VLCWcQc4/money.png',
+    type     : RTypes.MEDIA,
     answers  : [
       {
         nextId: 'clinicBuilding',
