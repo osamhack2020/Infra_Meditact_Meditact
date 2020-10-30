@@ -438,4 +438,4 @@ $ yarn start ( or npm start )
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 
-- [MIT LICENSE](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/LICENSE.md)
+- [MIT LICENSE](https://github.com/osamhack2020/Infra_Meditact_Meditact/blob/master/LICENSE.md)
