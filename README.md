@@ -1,6 +1,6 @@
 ## Meditact
 
-국군 의료 상담 AI챗봇 및 플랫폼 [**_Meditact_**](http://35.224.66.230/)
+국군 장병을 위한 AI 기반 비대면 의료 서비스 [**_Meditact_**](http://35.224.66.230/)
 
 ![logo](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/logo2.png)
 
