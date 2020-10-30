@@ -23,7 +23,7 @@ const questions                 = {
     ],
   },
   MeditactLogo: {
-    botPrompt: 'https://i.postimg.cc/xTZBmKds/meditact.png',
+    botPrompt: 'https://i.postimg.cc/MT7JzXbW/meditact.png',
     type     : RTypes.MEDIA,
     answers  : [
       {
@@ -157,7 +157,7 @@ const questions                 = {
   selectMeditactInfo: {
     botPrompt: '더 알고 싶은것이 있나요?',
     varName  : 'userName',
-    input    : selectField(['서버정보','프론트정보','AI정보','팀구성']),
+    input    : selectField(['서버정보','프론트정보','AI정보','구동인프라','팀구성']),
     answers  : [
       {
         answer   : '서버정보',
@@ -172,6 +172,11 @@ const questions                 = {
       {
         answer   : 'AI정보',
         nextId   : 'aiInfo',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '구동인프라',
+        nextId   : 'infraInfo',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
@@ -199,6 +204,13 @@ const questions                 = {
     botPrompt: "현재 다양한 모델을 적용시킬 예정입니다. AI를 개선해주고 싶은 분이 있으면 여기에다 issue를 달아주세요.",
     answers  : [
 			{ nextId: 'aiInfoScale' },
+    ],
+  },
+  infraInfo: {
+    botPrompt: "",
+    type     : RTypes.MEDIA,
+    answers  : [
+			{ nextId: 'select' },
     ],
   },
   teamInfo: {
