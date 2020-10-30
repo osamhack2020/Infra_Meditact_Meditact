@@ -412,6 +412,11 @@ const questions                 = {
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
+        answer   : '자동현금입출금기',
+        nextId   : 'money',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
         answer   : '처음으로',
         nextId   : 'select',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
