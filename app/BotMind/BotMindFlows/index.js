@@ -114,11 +114,7 @@ const questions                 = {
     varName  : 'userName',
     input    : selectField(['진료예약','건강상담','병원안내','의료진','MRI예약현황', 'Meditact소개']),
     answers  : [
-      {
-        answer   : '진료예약',
-        nextId   : 'preClinicLink',
-        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
-      },
+
       {
         answer   : '건강상담',
         nextId   : 'healthQuestion',
@@ -135,8 +131,8 @@ const questions                 = {
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
-        answer   : 'MRI예약현황',
-        nextId   : 'preClinicLink',
+        answer   : 'Home',
+        nextId   : 'preHomepageLink',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
@@ -147,7 +143,7 @@ const questions                 = {
     ],
   },
   MeditactInfo: {
-    botPrompt: '<strong>Meditact</strong>는 현재 개발되어지고 있는 오픈소스 기반 chatbot platform 입니다. ',
+    botPrompt: '<strong>Meditact</strong>는 현재 개발 되는 오픈소스 기반 chatbot platform 입니다. ',
     answers  : [
       {
         nextId: 'selectMeditactInfo',
@@ -244,6 +240,39 @@ const questions                 = {
     ],
   },
 
+  preHomepageLink: {
+    botPrompt: '메디텍트는 기존의 국군수도병원 홈페이지를 사용자 친화적으로 만들고자 노력하고 있습니다.',
+    answers  : [
+      {
+        nextId: 'preHomepageLink2',
+      },
+    ],
+  },
+  preHomepageLink: {
+    botPrompt: '메디텍트는 기존의 국군수도병원 홈페이지를 사용자 친화적으로 만들고자 노력하고 있습니다.',
+    answers  : [
+      {
+        nextId: 'preHomepageLink2',
+      },
+    ],
+  },
+  preHomepageLink2: {
+    botPrompt: '새롭게 단장 중인 홈페이지를 탐험해보시겠어요?',
+    answers  : [
+      {
+        nextId: 'homepageLink',
+      },
+    ],
+  },
+  homepageLink: {
+    botPrompt: '<a href="https://kshired.com/">Meditact</a> 🐦',
+    //input    : selectField(['African or European?', '10 m/s', "Don't ask me stupid questions."]),
+    answers  : [
+      {
+        nextId: 'select',
+      },
+    ],
+  },
   preClinicLink: {
     botPrompt: '링크를 클릭하세요 😎',
     answers  : [
@@ -341,13 +370,157 @@ const questions                 = {
     ],
   },
   clinicBuilding: {
-    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    botPrompt: '더 알고 싶은것이 있나요?',
+    varName  : 'userName',
+    input    : selectField(['환자식당', '직원식당', '충성마트', '피자나라치킨공주', '환자이발소', '미용실', '도서관', '야외쉼터', '자동현금인출기', '뒤로가기']),
     answers  : [
       {
-        nextId: 'hospitalGuide',
+        answer   : '환자식당',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '직원식당',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '충성마트',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '피자나라치킨공주',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '환자이발소',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '미용실',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '도서관',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '야외쉼터',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+      {
+        answer   : '미용실',
+        nextId   : 'select',
+        sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
     ],
   },
+
+  pEat: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+  eat: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+  px: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+  pizza: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+
+  pHair: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+
+  hair: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+
+  library: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+
+  park: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+
+  money: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+
+  clinicBuilding: {
+    botPrompt: '환자식당, 직원식당, 충성마트, 피자나라 치킨공주, 환자 이발소, 미용실, 북을북을 작은 도서관, 야외쉼터, 자동현금인출기',
+    answers  : [
+      {
+        nextId: 'clinicBuilding',
+      },
+    ],
+  },
+
+
+
+
 
   clinicSchedule: {
     varName  : 'userName',
