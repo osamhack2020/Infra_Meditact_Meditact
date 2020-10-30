@@ -23,6 +23,56 @@
 
 ## 기능 설계
 
+### Deep Learning
+
+#### 데이터셋 구축
+
+- [하이닥](https://www.hidoc.co.kr/)이라는 플랫폼의 질문을 스크래핑하여  11만 8008개의 데이터를 확보하였습니다.
+- 군의관이 직접 데이터 정리(cleaning) 및 라벨링(labeling)한 증상-진료과 데이터 5만 1134개 구축하였습니다.
+- [Github](https://github.com/osamhack2020/Infra_Meditact_Meditact/tree/master/data)과 [Kaggle](https://www.kaggle.com/hyeonhoonlee/classification-of-symptom)을 통해 데이터셋을 공개하였습니다.
+
+<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd8b82b6e-82ed-4a56-8035-1ef46e409699%2F_2020-10-30__4.38.28.png?table=block&id=cf90258b-e3dc-4ef3-80c8-60b9dfc1c035&width=4090&userId=&cache=v2" width="1000"/>
+
+
+#### 데이터 전처리
+
+<img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/konlp.png" width="250"/>
+
+- python의 **re**와 **konlp** 패키지를 이용하여 형태소를 분석하여 명사를 추출하여 데이터를 전처리하였습니다.
+
+
+#### 탐색적 데이터 분석
+
+- 진료과별 데이터 현황
+
+    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7ff9db8d-dc06-4335-92f6-8574f6e79b48%2F111.png?table=block&id=d1ad8778-22a4-45c7-88f9-0930e6e8ccb1&width=2350&userId=&cache=v2" width="750"/>
+
+- 각 문장별 단어 갯수 분석
+
+    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8955d36d-5df7-4b23-8aec-09d3345219bb%2F333.png?table=block&id=13c22bbb-c41c-46fa-a555-742cc81e9d36&width=670&userId=&cache=v2" width="550"/>
+
+- 워드클라우드를 통한 다빈도 단어 분석
+
+    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F750d0344-c8d4-4c8f-8693-9ce7852534e7%2F222.png?table=block&id=d8f7dc7c-181f-4335-b876-cacf4e51c1bf&width=700&userId=&cache=v2" width="550"/>
+
+
+#### 진료과 분류 딥러닝 모델 개발
+
+- LSTM, FastText, BERT 3가지 자연어 처리 모델 개발 및 성능 분석
+
+||<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F61edec61-392c-495a-a64e-24dd86f7da29%2F_2020-10-30__7.55.59.png?table=block&id=bd02b5bd-79a0-4e7d-891b-d658ad05b7b3&width=820&userId=&cache=v2" width="200"/>|<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F244a7a6a-bb5e-4e93-b218-c5a800384724%2F_2020-10-30__7.56.02.png?table=block&id=d08359bb-717f-4055-b8be-4fa413979be6&width=2880&userId=&cache=v2" width="200"/>|<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff182dc83-a064-4594-987a-89d62890a626%2F_2020-10-30__7.56.05.png?table=block&id=80cd0bcd-e151-432a-9b4a-3d2f22778505&width=1030&userId=&cache=v2" width="200"/>|
+|:----:|:----:|:--------:|:-----:|
+|모델명|LSTM|FastText|BERT|
+|분류 정확도|73.52%|37.44%|76.29%|
+
+- **오픈소스 해커톤**의 취지에 맞게 각 모델의 생성과정을 **누구나** 따라 할 수 있게 [Github](https://github.com)에 JupyterNotebook(.ipynb) 파일을 제공하였습니다.
+
+#### 최종 배포용 모델 선정
+
+- BERT 모델이 약 2.7% 더 좋은 성능을 보였으나, 기본 사이즈의 Google cloud vm instance를 사용하는 상황에 큰 용량의 모델을 사용하는 건 위험성 높다고 판단하였습니다.
+- 따라서, 성능이 유사하면서도 가볍고 호환성이 높은 LSTM 모델을 최종적으로 선택하였습니다.
+
+
 ### Web Front-end
 
 #### 디자인 구성
@@ -137,13 +187,16 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
 
 ### Infra Structure
 
-Google Cloud Platform 을 기반으로 채팅 앱을 컨테이너화 했습니다.
+- Google Cloud Platform을 기반으로 채팅 앱을 컨테이너화 했습니다.
 
-도커로 만들어진 컨테이너는 쿠버네티스가 컨트롤 합니다.
+- 도커로 만들어진 컨테이너는 쿠버네티스가 컨트롤 합니다.
 
-쿠버네티스는 24시간동안 무중단으로 챗봇이 작동하는 것을 돕습니다.
+- 쿠버네티스와 로드밸런스가 24시간동안 무중단으로 챗봇이 작동하는 것을 돕습니다.
 
-[![meditact-Infra.png](https://i.postimg.cc/yYYk4kGs/meditact-Infra.png)](https://postimg.cc/xqh0LTY4)
+- Github Repository에 소스가 push되어 수정되면, 자동으로 build하여 업데이트 되도록 세팅하였습니다.
+
+![meditact-Infra.png](https://i.postimg.cc/yYYk4kGs/meditact-Infra.png)
+
 
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
@@ -197,8 +250,8 @@ Google Cloud Platform 을 기반으로 채팅 앱을 컨테이너화 했습니�
         <td width="60">
             <div align="center"><a href="https://redux.js.org/" target="_blank"> <img src="https://e7.pngegg.com/pngimages/413/852/png-clipart-redux-react-logo-javascript-dq-purple-violet-thumbnail.png" alt="redux" width="40" height="40"/> </a><br>redux</br></div>
         </td>
-        <td width="60">
-            <div align="center"><a href="https://github.com/zalmoxisus/redux-devtools-extension" target="_blank"> <img src="https://lh3.googleusercontent.com/vCbHTO3hh4rIPl5XPab0ZXYEY1kmwzHvbvd3CPcXxunuCSn8ouz54Kc6xuxR88RP83bErQOt4Q=w128-h128-e365" alt="redux" width="40" height="40"/> </a><br>redux-devtool</br></br></div>
+        <td>
+            <div align="center"><a href="https://github.com/zalmoxisus/redux-devtools-extension" target="_blank"> <img src="https://lh3.googleusercontent.com/vCbHTO3hh4rIPl5XPab0ZXYEY1kmwzHvbvd3CPcXxunuCSn8ouz54Kc6xuxR88RP83bErQOt4Q=w128-h128-e365" alt="redux" height="40"/> </a><br>redux-devtool</br></div>
         </td>
     </tr>
 </tbody>
@@ -228,7 +281,7 @@ Google Cloud Platform 을 기반으로 채팅 앱을 컨테이너화 했습니�
        <td width="60">
             <div align="center"><a href="https://mongoosejs.com/" target="_blank"> <img src="https://cms-assets.tutsplus.com/uploads/users/34/posts/29527/preview_image/mongoose.jpg" alt="MONGODB" width="40" height="40"/> </a><br>mongoose</br></div>
         </td>
-​</tbody>
+</tbody>
 </table>
 
 ### Infra
@@ -323,4 +376,4 @@ $ yarn start ( or npm start )
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 
-- [MIT LICENSE](https://github.com/osamhack2020/Infra_Meditact_Meditact/blob/master/LICENSE.md)
+- [MIT LICENSE](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/LICENSE.md)
