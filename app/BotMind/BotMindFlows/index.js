@@ -383,7 +383,7 @@ const questions                 = {
   clinicBuilding: {
     botPrompt: '더 알고 싶은것이 있나요?',
     varName  : 'userName',
-    input    : selectField(['환자식당', '직원식당', '충성마트', '피자나라치킨공주', '환자이발소', '미용실', '도서관', '야외쉼터', 'ATM', '뒤로가기']),
+    input    : selectField(['환자식당', '직원식당', '충성마트', '피자나라치킨공주', '환자이발소', '미용실', '도서관', '야외쉼터', 'ATM', '처음으로']),
     answers  : [
       {
         answer   : '환자식당',
