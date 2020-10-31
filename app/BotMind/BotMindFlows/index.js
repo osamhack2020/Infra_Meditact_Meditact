@@ -545,23 +545,24 @@ const questions                 = {
   },
 
   healthCheck: {
-    botPrompt: '<strong>@varName</strong> 장병님. 건강 상태를 구체적으로 물어주세요 (예: 머리가 자주 아파요)',
-    input    : textField(),
+    botPrompt: '<strong>@varName</strong>님. 건강 상태를 구체적으로 물어주세요 (예: 머리가 자주 아파요)',
     type     : RTypes.TRANSFORMED_TEXT,
     varName  : 'userName',
     answers  : [
       {
-        answer     : 'hangul_healthCheck',
-        catchHealth: true,
-        nextId     : 'clinicThinking',
+        nextId: 'clinicThinking',
       },
     ],
   },
 
   clinicThinking: {
-    botPrompt: '어디로 가야 할 지 알려드릴게요. 조금만 기다려주세요!',
+    botPrompt: '다소 시간이 걸릴 수 있습니다',
+    input    : textField(),
+    type     : RTypes.TRANSFORMED_TEXT,
     answers  : [
       {
+        answer     : 'hangul_healthCheck',
+        catchHealth: true,
         nextId: 'clinicAnswer',
       },
     ],
