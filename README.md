@@ -11,7 +11,6 @@
 	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/osamhack2020/Infra_Meditact_Meditact"></a>
 	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/osamhack2020/Infra_Meditact_Meditact"></a>
 </p>
-<br><br><br>
 
 ---
 
@@ -30,11 +29,15 @@
 #### 4. 온라인 진료 예약 서비스
 - 진료 대기 시간을 최소화하고, 어렵게 군병원에 발걸음 하는 모든 장병들이 빠짐없이 최상의 의료서비스를 받을 수 있도록 온라인 진료 예약 서비스를 제공합니다.
 
-#### [프로젝트 설명 영상](https://www.youtube.com/watch?v=rY56N51-jr8&feature=youtu.be)
+#### 프로젝트 설명 영상 :point_down:
 
 <a href="https://youtu.be/rY56N51-jr8"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/playbutton.jpg" width="400"></a>
 
-#### [발표자료](https://github.com/osamhack2020/Infra_Meditact_Meditact/blob/master/Meditact_final.pdf)
+- <a href="https://drive.google.com/drive/folders/11_kpVcOpbCIaYFENpywC9GHO2Axen6XJ?usp=sharing">영상 다운로드 링크</a>
+
+#### 발표자료 :point_down:
+
+<a href="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/Meditact_final.pdf"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/pptbutton.png" width="400"></a>
 
 ## 기능 설계
 
