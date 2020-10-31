@@ -359,7 +359,7 @@ export const AccommodationFacility = {
   }, 
   
   library3: {
-    botPrompt: '',
+    botPrompt: '(입원환자)환자 인식 팔찌 및 (보호자)신분증 지참',
     answers  : [
       {
         nextId: 'library4',
@@ -368,7 +368,7 @@ export const AccommodationFacility = {
   },  
   
   library4: {
-    botPrompt: '',
+    botPrompt: '외래환자 이용 제한',
     answers  : [
       {
         nextId: 'library5',
@@ -377,7 +377,7 @@ export const AccommodationFacility = {
   },
   
   library5: {
-    botPrompt: '',
+    botPrompt: '운영시간 : 평일 09:30 ~ 12:30 / 13:30 ~ 16:30',
     answers  : [
       {
         nextId: 'library6',
@@ -386,7 +386,7 @@ export const AccommodationFacility = {
   },  
   
   library6: {
-    botPrompt: '',
+    botPrompt: '주말 09:30 ~ 12:30',
     answers  : [
       {
         nextId: 'library7',
@@ -395,7 +395,7 @@ export const AccommodationFacility = {
   },  
   
   library7: {
-    botPrompt: '',
+    botPrompt: '법정 공휴일 운영 시 사전 개방시간 공지',
     answers  : [
       {
         nextId: 'clinicBuilding',
