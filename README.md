@@ -12,6 +12,7 @@
 	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/osamhack2020/Infra_Meditact_Meditact"></a>
 </p>
 <br><br><br>
+
 ---
 
 **_Meditact_** 는 Medicine와 Untact를 합친 합성어로, 국군 의료 서비스의 편리함을 향상시키기 위해 탄생한 프로젝트입니다. 사용자들은 기존의 안내가 부족하던 병원 홈페이지에서 벗어나, 본인에게 필요한 서비스를 주도적으로 찾아 이용할 수 있습니다.
