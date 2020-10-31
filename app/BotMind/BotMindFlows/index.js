@@ -121,7 +121,7 @@ const questions                 = {
       },
       {
         answer   : '진료예약',
-        nextId   : 'healthQuestion',
+        nextId   : 'reservation',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
@@ -143,6 +143,20 @@ const questions                 = {
         answer   : 'Meditact소개',
         nextId   : 'MeditactInfo',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
+      },
+    ],
+  },
+  reservation: {
+    botPrompt: "이 링크에서 예약을 하실 수 있습니다",
+    answers  : [
+      { nextId: 'reservationLink' },
+    ],
+  },
+  reservationLink: {
+    botPrompt: '<a href="https://kshired.com/mypage">진료예약</a> :bird:',
+    answers  : [
+      {
+        nextId: 'select',
       },
     ],
   },
