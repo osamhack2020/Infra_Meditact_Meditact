@@ -1,3 +1,4 @@
+import * as RTypes from '../responseTypes';
 export const AccommodationFacility = {
   pEat: {
     botPrompt: 'https://i.postimg.cc/9fWdTDwN/peat.png',
