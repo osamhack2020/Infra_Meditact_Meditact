@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: meditact-1.1.1
+  name: meditact-1.1.1
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: meditact-1.1.1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: meditact-1.1.1
+    spec:
+      containers:
+        - image: gcr.io/meditact-292808/github.com/mindgitrwx/alpha
+          imagePullPolicy: IfNotPresent
+          name: alpha-1
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  labels:
+    app: meditact-1.1.1
+  name: meditact-1.1.1-hpa-nfar
+  namespace: default
+spec:
+  maxReplicas: 5
+  metrics:
+    - resource:
+        name: cpu
+        targetAverageUtilization: 80
+      type: Resource
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: meditact-1.1.1
+

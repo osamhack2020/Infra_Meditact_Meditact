@@ -1,0 +1,24 @@
+version: '2.4'
+
+services:
+  release:
+    image: gcr.io/meditact-292808/alpha:release
+    build:
+      context: .
+      target: release
+    ports:
+      - 3001:3000
+
+  alpha:
+    image: gcr.io/meditact-292808/alpha:development
+    build:
+      context: .
+      target: development
+      args:
+        - DEVELOPER_UID=${UID:-1000}
+        - DEVELOPER_USER=${USER:-you}
+    command: yarn start
+    volumes:
+      - .:/code
+    ports:
+      - 3001:3000
