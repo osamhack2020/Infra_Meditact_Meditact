@@ -23,7 +23,7 @@
 
 #### [프로젝트 설명 영상]()
 
-#### [발표자료]()
+#### [발표자료](https://github.com/osamhack2020/Infra_Meditact_Meditact/blob/master/Meditact_v1.pdf)
 
 ## 기능 설계
 
