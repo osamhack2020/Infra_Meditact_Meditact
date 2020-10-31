@@ -426,8 +426,8 @@ const questions                 = {
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
-        answer   : '자동현금입출금기',
-        nextId   : 'ATM',
+        answer   : 'ATM',
+        nextId   : 'money',
         sumToBags: [{ name: 'rickAndMorty', points: 3 }, { name: 'shroedingersCat', points: 2 }, { name: 'recursion', points: 1 }],
       },
       {
@@ -556,7 +556,7 @@ const questions                 = {
   },
 
   clinicThinking: {
-    botPrompt: '다소 시간이 걸릴 수 있습니다',
+    botPrompt: '입력하고 조금만 기다려주세요!',
     input    : textField(),
     type     : RTypes.TRANSFORMED_TEXT,
     answers  : [
