@@ -3,7 +3,7 @@
 국군 장병을 위한 AI 기반 비대면 의료 서비스 [**_Meditact_**](http://35.224.66.230/)
 
 [![logo](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/logo2.png)](http://35.224.66.230/)
----
+
 <p align="center">
 	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/search?l=TSX&type=code"><img alt="GitHub language count" src="https://img.shields.io/github/languages/count/osamhack2020/Infra_Meditact_Meditact"></a>
 	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/osamhack2020/Infra_Meditact_Meditact?color=success"></a>
