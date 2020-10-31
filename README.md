@@ -32,7 +32,7 @@
 
 #### [프로젝트 설명 영상](https://www.youtube.com/watch?v=rY56N51-jr8&feature=youtu.be)
 
-[![youtubemeditact.png](https://i.postimg.cc/3RYg6KLW/youtubemeditact.png)](https://www.youtube.com/watch?v=rY56N51-jr8)
+<a href="https://youtu.be/rY56N51-jr8"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/playbutton.jpg" width="400"></a>
 
 #### [발표자료](https://github.com/osamhack2020/Infra_Meditact_Meditact/blob/master/Meditact_final.pdf)
 
