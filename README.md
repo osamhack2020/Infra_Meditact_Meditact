@@ -258,7 +258,7 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
 - 쿠버네티스와 로드밸런스가 24시간동안 무중단으로 챗봇이 작동하는 것을 돕습니다.
 
 - Github Repository에 소스가 push되어 수정되면, 자동으로 build하여 업데이트 되도록 세팅하였습니다.
-
+[![automated-Build.gif](https://i.postimg.cc/0QMLqD0Q/automated-Build.gif)](https://postimg.cc/phv0f97b)
 ![meditact-Infra.png](https://i.postimg.cc/yYYk4kGs/meditact-Infra.png)
 
 
