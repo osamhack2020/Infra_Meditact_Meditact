@@ -153,7 +153,7 @@ const questions                 = {
     ],
   },
   reservationLink: {
-    botPrompt: '<a href="https://kshired.com/mypage">진료예약</a> :bird:',
+    botPrompt: '<a href="https://kshired.com/mypage">진료예약</a>',
     answers  : [
       {
         nextId: 'select',
@@ -557,6 +557,7 @@ const questions                 = {
       },
     ],
   },
+
   clinicThinking: {
     botPrompt: '어디로 가야 할 지 알려드릴게요. 조금만 기다려주세요!',
     answers  : [
