@@ -242,7 +242,7 @@
     <tbody>
         <tr>
             <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/information.png" width="40%" height="40%"></a></div></td>
-            <td width="33%">기제된 정보가 출력된 국군수도병원 페이지로 리디렉션</td>
+            <td width="33%">기재된 정보가 출력된 국군수도병원 페이지로 리디렉션</td>
         </tr>
     </tbody>
 </table>
