@@ -6,7 +6,7 @@
 ---
 <p align="center">
 	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/search?l=TSX&type=code"><img alt="GitHub language count" src="https://img.shields.io/github/languages/count/osamhack2020/Infra_Meditact_Meditact"></a>
-	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/osamhack2020/WEB_KookbangFriends_Woowahan?color=success"></a>
+	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/osamhack2020/Infra_Meditact_Meditact?color=success"></a>
 	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/osamhack2020/Infra_Meditact_Meditact"></a>
 	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/osamhack2020/Infra_Meditact_Meditact"></a>
 	<a href="https://github.com/osamhack2020/Infra_Meditact_Meditact/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/osamhack2020/Infra_Meditact_Meditact"></a>
