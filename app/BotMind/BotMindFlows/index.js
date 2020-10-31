@@ -7,6 +7,7 @@ import {
   endOfConversation,
 } from '../StateFormatter';
 import * as RTypes from '../responseTypes';
+import * as convPics from './conversationPicture';
 
 //const hangul_negative          = /(^hello|^hllo|^hi|^hey|^hola|^sup)\b\s?.*$/i;
 //const hangul_negative_negative = /(?!(^hello|^hi|^hey|^hllo|^sup|^hola)\b)\w+/i;
@@ -14,6 +15,9 @@ const hangul_negative          = /(?!([가-힣]+)\b)\w+/i;
 const hangul_negative_negative = /^[가-힣]+/i;
 
 const questions                 = {
+
+  ...convPics.AccommodationFacility,
+
   start: {
     botPrompt: '안녕하세요? 국군장병의 건강을 책임지는 AI로봇 <strong>메디텍트</strong> 입니다',
     answers  : [
@@ -438,100 +442,7 @@ const questions                 = {
     ],
   },
 
-  pEat: {
-    botPrompt: 'https://i.postimg.cc/9fWdTDwN/peat.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
 
-  eat: {
-    botPrompt: 'https://i.postimg.cc/B6nCWjq1/eat.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-  px: {
-    botPrompt: 'https://i.postimg.cc/NMFRJZ46/px.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-  pizza: {
-    botPrompt: 'https://i.postimg.cc/vm3WvGW8/pizza.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  pHair: {
-    botPrompt: 'https://i.postimg.cc/pTcJPPTc/hair.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  hair: {
-    botPrompt: 'https://i.postimg.cc/1XgctbVm/haircut.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  library: {
-    botPrompt: 'https://i.postimg.cc/8k3m3kxj/library.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  park: {
-    botPrompt: 'https://i.postimg.cc/Sxb7STS4/park.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  money: {
-    botPrompt: 'https://i.postimg.cc/VLCWcQc4/money.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
 
   clinicSchedule: {
     varName  : 'userName',
