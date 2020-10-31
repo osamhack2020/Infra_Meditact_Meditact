@@ -1,96 +1,35 @@
+import {
+  optionCards,
+  selectField,
+  tagsField,
+  textField,
+  disabledFieldText,
+  endOfConversation,
+} from '../StateFormatter';
 import * as RTypes from '../responseTypes';
-export const AccommodationFacility = {
-  pEat: {
-    botPrompt: 'https://i.postimg.cc/9fWdTDwN/peat.png',
-    type     : RTypes.MEDIA,
+export const starter = {
+  start: {
+    botPrompt: '안녕하세요? 국군장병의 건강을 책임지는 AI로봇 <strong>메디텍트</strong> 입니다',
     answers  : [
       {
-        nextId: 'clinicBuilding',
+        nextId: 'MeditactLogo',
       },
     ],
   },
-
-  eat: {
-    botPrompt: 'https://i.postimg.cc/B6nCWjq1/eat.png',
+  MeditactLogo: {
+    botPrompt: 'https://i.postimg.cc/MT7JzXbW/meditact.png',
     type     : RTypes.MEDIA,
     answers  : [
       {
-        nextId: 'clinicBuilding',
+        nextId: 'myPurpose',
       },
     ],
   },
-
-  px: {
-    botPrompt: 'https://i.postimg.cc/NMFRJZ46/px.png',
-    type     : RTypes.MEDIA,
+  myPurpose: {
+    botPrompt: '메디텍트는 <strong>Medicine</strong>과 <strong>Untact</strong>의 합성어로, 항상 국군 장병 곁에서 도와주겠다는 뜻을 담고있습니다',
     answers  : [
       {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-  pizza: {
-    botPrompt: 'https://i.postimg.cc/vm3WvGW8/pizza.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  pHair: {
-    botPrompt: 'https://i.postimg.cc/pTcJPPTc/hair.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  hair: {
-    botPrompt: 'https://i.postimg.cc/1XgctbVm/haircut.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  library: {
-    botPrompt: 'https://i.postimg.cc/8k3m3kxj/library.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  park: {
-    botPrompt: 'https://i.postimg.cc/Sxb7STS4/park.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
-      },
-    ],
-  },
-
-
-  money: {
-    botPrompt: 'https://i.postimg.cc/VLCWcQc4/money.png',
-    type     : RTypes.MEDIA,
-    answers  : [
-      {
-        nextId: 'clinicBuilding',
+        nextId: 'yourName',
       },
     ],
   },
