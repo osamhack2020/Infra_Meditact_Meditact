@@ -1,10 +1,10 @@
 // =================================BACKGROUND=================================
-export const background = 'url("http://s3.amazonaws.com/mindgitrwx/assets/img/bg.png") no-repeat center center';
+export const background = 'https://png.pngtree.com/png-clipart/20200701/original/pngtree-doctor-fighting-virus-design-png-element-png-image_5345643.jpg';
 
 // =================================COLORS=================================
 
 // --- Char General Colors ---//
-export const primaryColor    = '#7ed321';
+export const primaryColor    = '#dc2a23';
 export const onlineColor     = '#7ed321';
 export const offlineColor    = '#e5e5e5';
 export const textColor       = '#5d6975';
@@ -16,18 +16,18 @@ export const chatBorderColor = '#eeeeee';
 
 // --- Avatars Color ---//
 
-export const userAvatar          = '#97a911';
+export const userAvatar          = '#529aff';
 export const userAvatarTextColor = '#fff';
 export const botAvatar           = primaryColor;
 export const botAvatarTextColor  = '#fff';
-export const botAvatarIcon       = 'https://s3.amazonaws.com/mindgitrwx/alpha/botAvatar.png';
+export const botAvatarIcon       = 'https://i.postimg.cc/ncR9t1WZ/meditactlogo.png';
 
 // ---Bubbles/Dialogues/Badges Colors---//
 export const bubbleTextColorBot          = 'black';
-export const bubbleTextColorUser         = '#97a911';
-export const bubbleBGBot                 = 'rgba(232, 234, 235, 0.6)';
-export const bubbleBGUser                = 'rgba(232, 234, 235, 0.6)';
-export const selectReplyColor            = 'rgba(232, 234, 235, 0.6)';
+export const bubbleTextColorUser         = '#003785';
+export const bubbleBGBot                 = 'rgba(220, 42, 35, 0.1)';
+export const bubbleBGUser                = 'rgba(82, 154, 255, 0.1)';
+export const selectReplyColor            = 'rgba(82, 154, 255, 0.3)';
 export const selectReplyColorOnHover     = userAvatar;
 export const selectReplyTextColor        = bubbleTextColorUser;
 export const selectReplyTextColorOnHover = '#fff';
